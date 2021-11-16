@@ -87,3 +87,19 @@ vi:
   log_out: "Đăng Xuất"
   profile: "Hồ Sơ"
   setting: "Cài Đặt"
+  page_index_product_admin:
+    title: "Tất cả sản phẩm"
+    subject: "Tất Cả Sản Phẩm"
+    notification_nil: "Hiện tại không có sản phẩm nào"
+    button: "Thêm"
+    name: "Tên"
+    image: "Hình ảnh"
+    price: "Giá"
+    quantity: "Số lượng"
+  views:
+    pagination:
+      first: "« ĐẦU TIÊN"
+      last: "CUỐI CÙNG »"
+      previous: "‹ LÙI"
+      next: "TỚI ›"
+      truncate: "…"

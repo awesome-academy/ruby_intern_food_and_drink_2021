@@ -7,9 +7,9 @@
 body {
   margin: 0;
   padding: 0;
-  background: $color_1;
+  background: $gray_white;
   font-size: 16px;
-  color: $color_2;
+  color: $black_gray;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
 }
@@ -19,9 +19,9 @@ body {
   margin: 5% auto;
   width: 50em;
   height: 33em;
-  background: $color_3;
+  background: $white;
   border-radius: 2px;
-  box-shadow: 0 2px 4px $color_4;
+  box-shadow: 0 2px 4px $black_light;
 }
 
 .left {
@@ -34,7 +34,7 @@ body {
 }
 
 .alert-danger {
-  color: $color_5;
+  color: $red;
   margin-bottom: 20px;
 }
 
@@ -52,7 +52,7 @@ h1 {
   width: 100%;
   height: 100%;
   border: none;
-  border-bottom: 1px solid $color_6;
+  border-bottom: 1px solid $gray_light;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 15px;
@@ -61,7 +61,7 @@ h1 {
 
 .text:focus,
 .password:focus {
-  border-bottom: 2px solid $color_7;
+  border-bottom: 2px solid $purple_light;
   transition: 0.2s ease;
 }
 
@@ -69,10 +69,10 @@ input[type="submit"] {
   margin-top: 10px;
   width: 120px;
   height: 32px;
-  background: $color_8;
+  background: $purple;
   border: none;
   border-radius: 2px;
-  color: $color_3;
+  color: $white;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   text-transform: uppercase;
@@ -83,13 +83,13 @@ input[type="submit"] {
 input[type="submit"]:hover,
 input[type="submit"]:focus {
   opacity: 0.8;
-  box-shadow: 0 2px 4px $color_4;
+  box-shadow: 0 2px 4px $black_light;
   transition: 0.1s ease;
 }
 
 input[type="submit"]:active {
   opacity: 1;
-  box-shadow: 0 1px 2px $color_4;
+  box-shadow: 0 1px 2px $black_light;
   transition: 0.1s ease;
 }
 
@@ -111,7 +111,7 @@ input[type="submit"]:active {
   display: block;
   margin-bottom: 40px;
   font-size: 28px;
-  color: $color_3;
+  color: $white;
   text-align: center;
 }
 
@@ -121,7 +121,7 @@ button.social-signin {
   height: 40px;
   border: none;
   border-radius: 2px;
-  color: $color_3;
+  color: $white;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   transition: 0.2s ease;
@@ -130,30 +130,30 @@ button.social-signin {
 
 button.social-signin:hover,
 button.social-signin:focus {
-  box-shadow: 0 2px 4px $color_4;
+  box-shadow: 0 2px 4px $black_light;
   transition: 0.2s ease;
 }
 
 button.social-signin:active {
-  box-shadow: 0 1px 2px $color_4;
+  box-shadow: 0 1px 2px $black_light;
   transition: 0.2s ease;
 }
 
 button.social-signin.facebook {
-  background: $color_7;
+  background: $purple_light;
 }
 
 button.social-signin.twitter {
-  background: $color_9;
+  background: $blue_light;
 }
 
 button.social-signin.google {
-  background: $color_10;
+  background: $orange;
 }
 
 .error {
   font-size: 14px;
-  color: $color_5;
+  color: $red;
   padding: 4px;
 }
 
@@ -164,7 +164,7 @@ button.social-signin.google {
   position: absolute;
   top: 50px;
   right: 550px;
-  background: $color_3;
+  background: $white;
   text-align: center;
   height:40px;
   width: 190px;
@@ -173,7 +173,7 @@ button.social-signin.google {
 }
 .error-success {
   font-size: 14px;
-  color: $color_3;
+  color: $white;
   padding: 4px;
 }
 
