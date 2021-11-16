@@ -77,3 +77,13 @@ vi:
     error_messages:
       contain: "Biểu mẫu này chứa"
       error: "lỗi"
+  log_in:
+    log_in: "Đăng Nhập"
+    sign_up_now: "Đăng Ký Ngay!"
+    new_user: "Bạn là người dùng mới?"
+    invalid_email_or_password: "Email hoặc mật khẩu không hợp lệ!"
+    log_in_unsuccess: "Đăng nhập không thành công!"
+    remember_me: "Ghi Nhớ Tôi"
+  log_out: "Đăng Xuất"
+  profile: "Hồ Sơ"
+  setting: "Cài Đặt"

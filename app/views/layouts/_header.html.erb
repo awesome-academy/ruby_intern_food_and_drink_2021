@@ -6,7 +6,7 @@
           <!-- logo -->
           <div class="site-logo">
             <a href="home.html">
-              <img src="/assets/img/logo.png" alt="">
+              <%= image_tag "/assets/img/logo.png", alt: "" %>
             </a>
           </div>
           <!-- logo -->
@@ -25,12 +25,29 @@
                 </ul>
               </li>
               <li>
+                <%= link_to "#", class: "dropdown-toggle", "data-toggle": "dropdown" do %>
+                  <%= image_tag "/assets/img/avatar1.png", class: "avatar-default" %>
+                  <b class="caret"></b>
+                <% end %>
+                <ul class="sub-menu">
+                  <% if logged_in? %>
+                    <li><%= link_to t("profile"), "#" %></li>
+                    <li><%= link_to t("setting"), "#" %></li>
+                    <li>
+                      <%= link_to t("log_out"), logout_path, method: :delete %>
+                    </li>
+                  <% else %>
+                    <li><%= link_to t("sign_up.sign_up"), new_user_path %></li>
+                    <li><%= link_to t("log_in.log_in"), login_path %></li>
+                  <% end %>
+                </ul>
+              </li>
+              <li>
                 <div class="header-icons">
                   <a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
                   <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
                 </div>
               </li>
-
             </ul>
           </nav>
           <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
@@ -41,21 +58,3 @@
     </div>
   </div>
 </div>
-<!-- search area -->
-<div class="search-area">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <span class="close-btn"><i class="fas fa-window-close"></i></span>
-        <div class="search-bar">
-          <div class="search-bar-tablecell">
-            <h3><%= t(".search")%></h3>
-            <input type="text" placeholder=<%= t(".search") %>>
-            <button type="submit"><%= t(".search") %><i class="fas fa-search"></i></button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- end search area -->
