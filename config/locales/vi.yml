@@ -58,3 +58,22 @@ vi:
       title: "Giỏ hàng"
     checkout:
       title: "Thủ tục thanh toán"
+  sign_up:
+    sign_up: "Đăng Ký"
+    dont_account: "Bạn đã có tài khoản? "
+    log_in_now: " Đăng Nhập Ngay!"
+    sign_in_with_social_network: "Đăng nhập bằng mạng xã hội"
+    log_in_with_facebook: "Đăng nhập Facebook"
+    log_in_with_google: "Đăng nhập bằng Google+"
+    message_sign_up_success: "Đăng Ký Thành Công!"
+    message_sign_up_fail: "Đăng Ký Không Thành Công!"
+  form:
+    full_name: "Tên đầy đủ"
+    email: "E-mail"
+    password: "Mật Khẩu"
+    password_confirmation: "Xác Nhận Mật Khẩu"
+  message_user_nil: "Tài khoản không tồn tại!"
+  shared:
+    error_messages:
+      contain: "Biểu mẫu này chứa"
+      error: "lỗi"

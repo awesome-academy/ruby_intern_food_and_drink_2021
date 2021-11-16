@@ -89,3 +89,22 @@ en:
       title: "Cart"
     checkout:
       title: "Checkout"
+  sign_up:
+    sign_up: "Sign Up"
+    dont_account: "Already have an account? "
+    log_in_now: " Login Now!"
+    sign_in_with_social_network: "Sign in with social network"
+    log_in_with_facebook: "Log in with facebook"
+    log_in_with_google: "Log in with Google+"
+    message_sign_up_success: "Sign Up Success!"
+    message_sign_up_fail: "Sign Up Fail!"
+  form:
+    full_name: "Full Name"
+    email: "E-mail"
+    password: "Password"
+    password_confirmation: "Confirm Password"
+  message_user_nil: "Account does not exist!"
+  shared:
+    error_messages:
+      contain: "The form contains"
+      error: "error"
