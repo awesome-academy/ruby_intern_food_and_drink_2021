@@ -118,15 +118,6 @@ en:
   log_out: "Log Out"
   profile: "Profile"
   setting: "Setting"
-  page_index_product_admin:
-    title: "All Products"
-    subject: "All Products"
-    notification_nil: "There are currently no products"
-    button: "Add"
-    name: "Name"
-    image: "Image"
-    price: "Price"
-    quantity: "Quantity"
   views:
     pagination:
       first: "« FIRST"
@@ -134,3 +125,39 @@ en:
       previous: "‹ PREV"
       next: "NEXT ›"
       truncate: "…"
+  show_product_fail: "Product Not Found"
+  admin:
+    foods:
+      index:
+        title: "All Products"
+        subject: "All Products"
+        notification_nil: "There are currently no products"
+        button: "Add"
+        name: "Name"
+        image: "Image"
+        price: "Price"
+        quantity: "Quantity"
+      show:
+        title: "Details Product"
+        img: "Avatar"
+        name: "Name"
+        price: "Price"
+        description: "Description"
+        quantity: "Quantity"
+        status: "Status"
+        category: "Category"
+    categories:
+      index:
+        title: "All Categories"
+        subject: "All Categories"
+        notification_nil: "There are currently no categories"
+        button: "Add Category"
+        name: "Name Category"
+      new:
+        button: "Add Category"
+        name: "Name Category"
+  category_deleted: "Category deleted"
+  delete_fail: "Delete fail"
+  sure: "Sure delete ?"
+  add_success: "Add Success"
+  add_fail: "Add Fail"

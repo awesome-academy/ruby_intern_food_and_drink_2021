@@ -8,6 +8,13 @@
     </div></br>
     <div class="title_right">
       <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+        <%= link_to t(".button"), new_admin_category_path,
+         {remote: true, "data-toggle":  "modal", "data-target": "#modal-window", class: "btn btn-primary btn-lg"} %>
+        <div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -17,12 +24,13 @@
       <div class="x_panel">
         <div class="x_title">
           <ul class="nav navbar-right panel_toolbox">
-            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+            </li>
           </ul>
           <div class="clearfix"></div>
         </div>
         <div class="x_content">
-          <% if @foods.any? %>
+          <% if @categories.any? %>
             <div class="row">
               <div class="col-sm-12">
                 <div class="card-box table-responsive">
@@ -30,24 +38,19 @@
                     <thead>
                       <tr>
                         <th><%= t ".name" %></th>
-                        <th><%= t ".image" %></th>
-                        <th><%= t ".price" %></th>
-                        <th><%= t ".quantity" %></th>
                       </tr>
                     </thead>
                     <tbody>
-                      <%= render @foods %>
+                      <%= render @categories %>
                     </tbody>
                   </table>
                 </div>
               </div>
             </div>
-            <%= paginate @foods, theme: "twitter-bootstrap-3" %>
+            <%= paginate @categories, theme: "twitter-bootstrap-3" %>
           <% else %>
             <div class="index_product_nil">
-            <h1><%= t ".notification_nil" %></h1>
-            <%= link_to t(".button"), "#",
-                class: "btn btn-primary" %>
+              <h1><%= t ".notification_nil" %></h1>
             </div>
           <% end %>
         </div>
