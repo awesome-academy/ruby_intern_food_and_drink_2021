@@ -27,3 +27,34 @@ vi:
   account:
     accounts: "Tài khoản"
     blocked: "Đã khóa"
+  home: "Trang chủ"
+  menu: "Thực đơn"
+  about: "Về chúng tôi"
+  blog: "Bài viết"
+  contact: "Liên hệ"
+  categories:
+    categories: "Thể loại"
+  layouts:
+    header:
+      home: "Trang chủ"
+      about: "Về chúng tôi"
+      contact: "Liên hệ"
+      shop: "Cửa hàng"
+      search: "Tìm kiếm"
+    footer:
+      about: "Về chúng tôi"
+      get_in_touch: "Liên hệ"
+      subscribe: "Đăng ký"
+  static_pages:
+    home:
+      title: "Trang chủ"
+    about:
+      title: "Về chúng tôi"
+    contact:
+      title: "Liên hệ"
+    shop:
+      title: "Cửa hàng"
+    cart:
+      title: "Giỏ hàng"
+    checkout:
+      title: "Thủ tục thanh toán"

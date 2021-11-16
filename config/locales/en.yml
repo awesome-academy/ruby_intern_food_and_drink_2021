@@ -58,3 +58,34 @@ en:
   account:
     accounts: "Accounts"
     blocked: "Blocked"
+  home: "Home"
+  menu: "Menu"
+  about: "About"
+  blog: "Blog"
+  contact: "Contact"
+  categories:
+    categories: "Categories"
+  layouts:
+    header:
+      home: "Home"
+      about: "About"
+      contact: "Contact"
+      shop: "Shop"
+      search: "Search"
+    footer:
+      about: "About Us"
+      get_in_touch: "Get In Touch"
+      subscribe: "Subcribe"
+  static_pages:
+    home:
+      title: "Home"
+    about:
+      title: "About"
+    contact:
+      title: "Contact"
+    shop:
+      title: "Shop"
+    cart:
+      title: "Cart"
+    checkout:
+      title: "Checkout"

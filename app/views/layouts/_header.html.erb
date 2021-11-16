@@ -1,0 +1,61 @@
+<div class="top-header-area" id="sticker">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-sm-12 text-center">
+        <div class="main-menu-wrap">
+          <!-- logo -->
+          <div class="site-logo">
+            <a href="home.html">
+              <img src="/assets/img/logo.png" alt="">
+            </a>
+          </div>
+          <!-- logo -->
+
+          <!-- menu start -->
+          <nav class="main-menu">
+            <ul>
+              <li><%= link_to t(".home"), root_path %></a></li>
+              <li><%= link_to t(".about"), about_path %></a></li>
+              <li><%= link_to t(".contact"), contact_path %></a></li>
+              <li><%= link_to t(".shop"), shop_path %></li>
+              <li><a href="#"><%= t("language") %></a>
+                <ul class="sub-menu">
+                  <li><%= link_to t("english"), locale: :en %></li>
+                  <li><%= link_to t("vietnamese"), locale: :vi %></li>
+                </ul>
+              </li>
+              <li>
+                <div class="header-icons">
+                  <a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                  <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+                </div>
+              </li>
+
+            </ul>
+          </nav>
+          <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+          <div class="mobile-menu"></div>
+          <!-- menu end -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- search area -->
+<div class="search-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <span class="close-btn"><i class="fas fa-window-close"></i></span>
+        <div class="search-bar">
+          <div class="search-bar-tablecell">
+            <h3><%= t(".search")%></h3>
+            <input type="text" placeholder=<%= t(".search")%>>
+            <button type="submit"><%= t(".search")%><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end search area -->
