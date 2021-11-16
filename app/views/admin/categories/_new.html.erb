@@ -1,0 +1,10 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal">x</button>
+</div>
+<div class="modal-body">
+  <h3><%= t("page_index_category_admin.name") %></h3>
+  <%= form_for @category, url: admin_categories_path do |f| %>
+    <%= f.text_field :category_name, class: "text", placeholder: t("page_index_category_admin.name") %>
+    <%= f.submit t("page_index_category_admin.button"), class: "btn btn-primary" %>
+  <% end %>
+</div>
