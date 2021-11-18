@@ -30,4 +30,31 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  food_drink: "Foods and Drinks"
+  language: "Language"
+  english: "English"
+  vietnamese: "Vietnamese"
+  welcome: "Welcome"
+  back_home: "Về trang chính"
+  manager_orders: "Manager orders"
+  manager_analytic: "Analytic"
+  analytic_week: "Week"
+  analytic_month: "Month"
+  profile: "Profile"
+  logout: "Logout"
+  manager_accounts: "Manager accounts"
+  status_order:
+    open: "Open"
+    confirmed: "Confirmed"
+    shipping: "Shipping"
+    completed: "Completed"
+    cancelled: "Cancelled"
+  manager_products: "Manager products"
+  product:
+    products: "Product"
+    all_products: "Products"
+    categories: "Categories"
+    add_product: "Add product"
+  account:
+    accounts: "Accounts"
+    blocked: "Blocked"
