@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     get "/cart", to: "static_pages#cart"
     get "/checkout", to: "static_pages#checkout"
     get "/single", to: "static_pages#single"
+    resources :users
   end
 end

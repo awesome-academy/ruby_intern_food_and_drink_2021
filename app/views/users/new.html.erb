@@ -1,0 +1,19 @@
+<div id="login-box">
+  <div class="left">
+    <h1 class="title"><%= t "sign_up.sign_up" %></h1>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    <%= render "layouts/form" %>
+    <p>
+      <%= t "sign_up.dont_account" %>
+      <a href="#"><%= t "sign_up.log_in_now" %></a>
+    </p>
+  </div>
+
+  <div class="right">
+    <h2 class="loginwith"><%= t "sign_up.sign_in_with_social_network" %></h2>
+    <button class="social-signin facebook"><%= t "sign_up.log_in_with_facebook" %></button>
+    <button class="social-signin google"><%= t "sign_up.log_in_with_google" %></button>
+  </div>
+</div>
