@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     get "/cart", to: "static_pages#cart"
     get "/checkout", to: "static_pages#checkout"
     get "/single", to: "static_pages#single"
+    get :login, to: "sessions#new"
+    post :login, to: "sessions#create"
+    delete :logout, to: "sessions#destroy"
     resources :users
   end
 end
