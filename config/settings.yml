@@ -5,3 +5,7 @@ length:
   max_100: 100
   max_250: 250
 email_regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+gravatar:
+  small_size: 50
+  medium_size: 80
+per_page: 15

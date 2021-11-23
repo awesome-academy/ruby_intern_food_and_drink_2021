@@ -118,3 +118,19 @@ en:
   log_out: "Log Out"
   profile: "Profile"
   setting: "Setting"
+  page_index_product_admin:
+    title: "All Products"
+    subject: "All Products"
+    notification_nil: "There are currently no products"
+    button: "Add"
+    name: "Name"
+    image: "Image"
+    price: "Price"
+    quantity: "Quantity"
+  views:
+    pagination:
+      first: "« FIRST"
+      last: "LAST »"
+      previous: "‹ PREV"
+      next: "NEXT ›"
+      truncate: "…"

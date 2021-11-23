@@ -8,11 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link href="/assets/admin/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/admin/fonts/font-awesome.min.css" rel="stylesheet">
-    <link href="/assets/admin/css/custom.min.css" rel="stylesheet">
-    <link href="/assets/admin/css/dataTables.bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/admin/css/toastr.css" rel="stylesheet"/>
+    <%= stylesheet_link_tag "admin", media: "all",
+                            "data-turbolinks-track": "reload" %>
+    <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
   </head>
   <body class="nav-md" >
     <div class="container body">
@@ -26,7 +24,6 @@
           </div>
         </div>
       </div>
-
     <script src="/assets/admin/js/jquery.min.js"></script>
     <script src="/assets/admin/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/admin/js/custom.min.js"></script>

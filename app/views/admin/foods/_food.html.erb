@@ -1,0 +1,18 @@
+<tr>
+  <td><%= food.name %></td>
+  <td><%= gravatar_for food, size: Settings.gravatar.medium_size %></td>
+  <td><%= food.price %></td>
+  <td><%= food.quantity %></td>
+  <td>
+    <%= link_to "#" do %>
+      <button type="button" class="btn btn-primary btn-sm">
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      </button>
+    <% end %>
+    <%= link_to "#" do %>
+      <button type="button" class="btn btn-danger btn-sm">
+        <i class="fa fa-trash-o" aria-hidden="true"></i>
+      </button>
+    <% end %>
+  </td>
+</tr>
