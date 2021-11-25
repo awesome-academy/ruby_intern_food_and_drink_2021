@@ -1,6 +1,13 @@
 class FoodsController < ApplicationController
   before_action :load_food, only: :show
 
+  def index
+    @foods = Food.search_by_name(params[:name]).enabled.recent_foods
+                 .page(params[:page])
+                 .per(Settings.per_page_food)
+    render "static_pages/shop"
+  end
+
   def show; end
 
   private

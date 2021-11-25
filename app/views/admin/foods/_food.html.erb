@@ -10,7 +10,7 @@
   <td><%= food.price %></td>
   <td><%= food.quantity %></td>
   <td>
-    <%= link_to "#" do %>
+    <%= link_to edit_admin_food_path(food) do %>
       <button type="button" class="btn btn-primary btn-sm">
         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
       </button>
