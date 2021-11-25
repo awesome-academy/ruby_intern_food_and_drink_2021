@@ -16,10 +16,23 @@
   padding-bottom: 30px;
 }
 
+.container_index{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 20px;
+  padding: 10px 0 20px 0;
+}
+
 .li_index{
   overflow: auto;
   padding: 10px 0;
   border-bottom: 1px solid $gray;
+}
+
+.card-inside{
+  width: 200px;
+  border-radius: 10px;
 }
 
 .index_product_name{
@@ -86,4 +99,113 @@
 .total-order{
   margin-right: 50px;
   font-size: 20px;
+}
+
+.th-head-show{
+  padding-left: 30px;
+  width: 10%;
+}
+
+.th-head-show-width40{
+  padding-left: 30px;
+  width: 40%;
+}
+
+.th-action{
+  width: 10%;
+}
+
+.td-body-show{
+  padding-left: 30px
+}
+
+.td-name-body-show{
+  padding-left: 30px;
+  word-wrap: break-word;
+}
+
+.td-action-body-show{
+  width: 90px;
+}
+
+.container-images-show{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.image-show{
+  padding: 10px
+}
+
+.card-margin{
+  margin-left: 10px;
+}
+
+.card-p{
+  color: black;
+}
+
+.form-new{
+  margin-top: 50px;
+}
+
+.text{
+  display: block;
+  box-sizing: border-box;
+  margin: 3px 0;
+  padding: 4px;
+  width: 50%;
+  height: 100%;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.submit-form-index{
+  font-size: 20px;
+  margin: 15px 0;
+  color: $black;
+}
+
+.pagination-wrap ul li a {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.pagination-wrap ul li:hover a {
+  background-color: $orange_light;
+}
+
+.pagination-wrap {
+  margin-top: 40px;
+}
+
+.pagination-wrap ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pagination-wrap ul li {
+  display: inline-block;
+}
+
+.pagination-wrap ul li a {
+  color: $black;
+  font-size: 15px;
+  background-color: $white;
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 5px;
+  margin: 3px;
+  font-weight: 600;
+  border-radius: 50px;
+}
+
+.pagination-wrap ul li a.active {
+  background-color: $orange_light;
 }

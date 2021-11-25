@@ -31,39 +31,26 @@
         </div>
       </div>
     </div>
-
-    <div class="row">
-      <div class="col-lg-4 col-md-6 text-center">
-        <div class="single-product-item">
-          <div class="product-image">
-            <a href="single.html"><img src="/assets/img/products/product-img-1.jpg" alt=""></a>
+    <% if @foods.any? %>
+      <div class="row">
+        <%= render @foods %>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="product-filters">
+              <ul>
+                  <li class="active">
+                    <%= link_to t(".see_more"), shop_path, class:"cart-btn" %>
+                  </li>
+              </ul>
           </div>
-          <h3>Strawberry</h3>
-          <p class="product-price"><span>Per Kg</span> 85$ </p>
-          <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 text-center">
-        <div class="single-product-item">
-          <div class="product-image">
-            <a href="single.html"><img src="/assets/img/products/product-img-2.jpg" alt=""></a>
-          </div>
-          <h3>Berry</h3>
-          <p class="product-price"><span>Per Kg</span> 70$ </p>
-          <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-        </div>
+    <% else %>
+      <div class="row justify-content-center alert alert-danger">
+        <h4 class="mb-4"><%= t("home_page.our_products_nil") %></h4>
       </div>
-      <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
-        <div class="single-product-item">
-          <div class="product-image">
-            <a href="single.html"><img src="/assets/img/products/product-img-3.jpg" alt=""></a>
-          </div>
-          <h3>Lemon</h3>
-          <p class="product-price"><span>Per Kg</span> 35$ </p>
-          <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-        </div>
-      </div>
-    </div>
+    <% end %>
   </div>
 </div>
 <!-- end product section -->

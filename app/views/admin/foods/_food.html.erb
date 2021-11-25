@@ -1,6 +1,12 @@
 <tr>
   <td><%= link_to food.name, admin_food_path(food) %></td>
-  <td><%= gravatar_for food, size: Settings.gravatar.medium_size %></td>
+  <td>
+    <% if food.thumbnail.present? %>
+      <%= link_to image_tag(food.display_thumbnail), admin_food_path(food) %><br>
+    <% else %>
+      <%= link_to (gravatar_for food, size: Settings.gravatar.medium_size), admin_food_path(food) %><br>
+    <% end %>
+  </td>
   <td><%= food.price %></td>
   <td><%= food.quantity %></td>
   <td>

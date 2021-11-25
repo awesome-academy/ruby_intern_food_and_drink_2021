@@ -48,6 +48,7 @@ en:
   static_pages:
     home:
       title: "Home"
+      see_more: "See More"
     about:
       title: "About"
     contact:
@@ -106,6 +107,10 @@ en:
         image: "Image"
         price: "Price"
         quantity: "Quantity"
+        action: "Action"
+        button: "Add Product"
+      new:
+        title: "Create Product"
       show:
         title: "Details Product"
         img: "Avatar"
@@ -115,6 +120,21 @@ en:
         quantity: "Quantity"
         status: "Status"
         category: "Category"
+        action: "Action"
+        images: "Images"
+      form:
+        title: "Create Product"
+        thumbnail: "Thumbnail"
+        name: "Name"
+        price: "Price"
+        description: "Description"
+        quantity: "Quantity"
+        status: "Status"
+        category: "Category"
+        images: "Images"
+        button: "Add Product"
+        enabled: "enabled"
+        disabled: "disabled"
     categories:
       index:
         title: "All Categories"
@@ -184,3 +204,18 @@ en:
   all: "All"
   no_order: "No order"
   order_detail: "Order detail"
+  foods:
+    food:
+      per_kg: "Per Kg"
+      add_to_cart: "Add to cart"
+    show:
+      per_kg: "Per Kg"
+      add_to_cart: "Add to cart"
+      see_more: "See more Details"
+      single_product: "Single Product"
+      description: "Description"
+      category: "Categories"
+      quantity: "Quantity"
+      status: "Status"
+      out_of_stock: "Out of stock"
+      food_disabled: "Food disabled"

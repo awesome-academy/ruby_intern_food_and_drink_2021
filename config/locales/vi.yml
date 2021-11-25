@@ -48,6 +48,7 @@ vi:
   static_pages:
     home:
       title: "Trang chủ"
+      see_more: "Xem Thêm"
     about:
       title: "Về chúng tôi"
     contact:
@@ -106,6 +107,10 @@ vi:
         image: "Hình ảnh"
         price: "Giá"
         quantity: "Số lượng"
+        action: "Hoạt Động"
+        button: "Thêm sản phẩm"
+      new:
+        title: "Tạo Sản Phẩm"
       show:
         title: "Chi Tiết Sản Phẩm"
         img: "Ảnh Đại Diện"
@@ -115,6 +120,21 @@ vi:
         quantity: "Số Lượng"
         status: "Trạng Thái"
         category: "Loại"
+        action: "Hoạt Động"
+        images: "Hình ảnh"
+      form:
+        title: "Tạo Sản Phẩm"
+        thumbnail: "Hình đại diện"
+        name: "Tên"
+        price: "Giá"
+        description: "Mô Tả"
+        quantity: "Số Lượng"
+        status: "Trạng Thái"
+        category: "Phân Loại"
+        images: "Hình ảnh"
+        button: "Thêm Sản Phẩm"
+        enabled: "đã được kích hoạt"
+        disabled: "chưa được kích hoạt"
     categories:
       index:
         title: "Tất cả Danh Mục"
@@ -184,3 +204,18 @@ vi:
   all: "Tất cả"
   no_order: "Không có đơn hàng"
   order_detail: "Chi tiết đơn hàng"
+  foods:
+    food:
+      per_kg: "Mỗi Kg"
+      add_to_cart: "Thêm vào giỏ hàng"
+    show:
+      per_kg: "Mỗi Kg"
+      add_to_cart: "Thêm vào giỏ hàng"
+      see_more: "Xem thêm Chi tiết"
+      single_product: "Sản phẩm đơn"
+      description: "Mô tả"
+      category: "Thể loại"
+      quantity: "Số lượng"
+      status: "Trạng thái"
+      out_of_stock: "Hết hàng"
+      food_disabled: "Thực phẩm bị vô hiệu hóa"

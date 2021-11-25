@@ -1,0 +1,82 @@
+<div class="breadcrumb-section breadcrumb-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <div class="breadcrumb-text">
+          <p><%= t ".see_more" %></p>
+          <h1><%= t ".single_product" %></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- single product -->
+<div class="single-product mt-150 mb-150">
+  <div class="container">
+    <div class="row">
+      <% if @food.enabled? %>
+        <div class="col-md-5">
+          <div class="single-product-img">
+            <% if check_image? %>
+              <%= image_tag @food.thumbnail %>
+            <% else %>
+              <%= gravatar_for @food, size: Settings.medium_size %>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="single-product-content">
+            <h3><%= @food.name %></h3>
+            <h4><%= t ".per_kg" %>: <%= number_to_currency(@food.price, locale: :vi) %></h4>
+            <p><h4><%= t ".description" %>:</h4><%= @food.description %></p>
+            <p><h4><%= t ".category" %>:</h4><%= @food.category_name %></p>
+            <% if @food.quantity > Settings.out_of_stock %>
+              <%= form_tag "#" do %>
+                <%= hidden_field_tag :food_id, @food.id %>
+                <h6><%= t ".quantity" %></h6>
+                <div class="form-group">
+                  <%= number_field_tag :quantity, Settings.quantity_min,
+                      class: "form-control prd-quantity",
+                      min: Settings.quantity_min , max: @food.quantity
+                  %>
+                </div>
+                <div class="action">
+                  <%= submit_tag t(".add_to_cart"), class: "cart-btn" %>
+                </div>
+              <% end %>
+            <% else %>
+              <span class="review-no">
+                <%= t ".status" %>
+                <span class="badge btn btn-danger">
+                  <%= t ".out_of_stock" %>
+                </span>
+              </span>
+            <% end %>
+            <h4>Share:</h4>
+            <ul class="product-share">
+              <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href=""><i class="fab fa-twitter"></i></a></li>
+              <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
+              <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <ul class="preview-thumbnail nav nav-tabs">
+            <li class="active">
+              <% @food.images.each do |img| %>
+                <%= image_tag @food.display_image(img) if @food.images.attached? %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      <% else %>
+          <div class="card">
+            <div class="container-fluid">
+              <h3><%= t ".food_disabled" %></h3>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
