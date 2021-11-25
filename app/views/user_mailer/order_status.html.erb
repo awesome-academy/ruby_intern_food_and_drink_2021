@@ -1,0 +1,48 @@
+<p><%= t "hello", name: @order.user_name %></p>
+<p><%= t "content_#{@order.status}" %></p></br>
+<div class="x_content">
+  <div class="infor_order row">
+    <div class="col-md-1 infor_col">
+      <p><b><%= t ".fullname" %>: </b><%= @order.user_name %></p>
+      <p><b><%= t ".address" %>: </b><%= @order.address %></p>
+      <p><b><%= t ".phone" %>: </b><%= @order.phone %></p>
+      <p><b><%= t ".status" %>: </b><%= t("status_order.#{@order.status}") %></p>
+      <p><b><%= t ".created_order" %>: </b><%= l @order.created_at, format: :own %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="table-responsive">
+        <table class="tabl">
+          <thead>
+            <tr>
+              <th><%= t ".ordinal_number" %></th>
+              <th><%= t ".product_name" %></th>
+              <th><%= t ".quantity" %></th>
+              <th><%= t ".price" %></th>
+              <th><%= t ".total_price" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @carts.each_with_index do |cart, i|%>
+              <tr>
+                <td><%= i+1 %></td>
+                <td><%= cart.food_name %></td>
+                <td><%= cart.quantity %></td>
+                <td><%= number_to_currency(cart.food_price, locale: :vi) %></td>
+                <td><%= number_to_currency(cart.food_price*cart.quantity, locale: :vi) %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="justify-content-end">
+    <p>
+      <b><%= t ".total" %></b>:
+      <%= number_to_currency(@total, locale: :vi) %>
+    </p>
+  </div>
+</div>

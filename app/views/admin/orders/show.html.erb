@@ -22,6 +22,17 @@
         </div>
         <% if @order %>
           <div class="x_content">
+            <div class="title-info-order"><%= t ".order_person" %></div>
+            <div class="infor_order row">
+              <div class="col-md-1 infor_col">
+                <p><%= t ".fullname" %>:</p>
+                <p>Email: </p>
+              </div>
+              <div class="col-md-8">
+                <p><%= @order.user_name %></p>
+                <p><%= @order.user_email %></p>
+              </div>
+            </div><br>
             <div class="infor_order row">
               <div class="col-md-1 infor_col">
                 <p><%= t ".fullname" %>:</p>
@@ -42,6 +53,10 @@
                 <p><%= l @order.created_at, format: :own %></p>
               </div>
             </div>
+            <div>
+              <!--allow accept or reject order -->
+              <%= render "order_button" %>
+            </div><br>
             <div class="row">
               <div class="col-sm-12">
                 <div class="card-box table-responsive">

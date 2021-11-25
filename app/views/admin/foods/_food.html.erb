@@ -15,7 +15,7 @@
         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
       </button>
     <% end %>
-    <%= link_to "#" do %>
+    <%= link_to admin_food_path(food), method: :delete,data: {confirm: t("sure")}  do %>
       <button type="button" class="btn btn-danger btn-sm">
         <i class="fa fa-trash-o" aria-hidden="true"></i>
       </button>

@@ -11,7 +11,7 @@
                     <% i=0 %>
                     <% Order.statuses.keys.each do |sta|%>
                       <li class="list-inline-item items-list">
-                        <%= link_to t(".#{sta}"), admin_status_path(status: sta), class: "btn #{Settings.button[i].name}" %>
+                        <%= link_to t(".#{sta}"), admin_orders_path(status: sta), class: "btn #{Settings.button[i].name}" %>
                         <% i=i+1 %>
                       </li>
                     <% end%>
