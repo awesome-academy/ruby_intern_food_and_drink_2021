@@ -31,7 +31,7 @@
             <p><h4><%= t ".description" %>:</h4><%= @food.description %></p>
             <p><h4><%= t ".category" %>:</h4><%= @food.category_name %></p>
             <% if @food.quantity > Settings.out_of_stock %>
-              <%= form_tag "#" do %>
+              <%= form_tag carts_path, remote: true do %>
                 <%= hidden_field_tag :food_id, @food.id %>
                 <h6><%= t ".quantity" %></h6>
                 <div class="form-group">

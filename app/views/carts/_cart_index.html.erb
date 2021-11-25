@@ -1,0 +1,64 @@
+<div class="container">
+  <% if @carts.any? %>
+    <div class="row">
+      <div class="col-lg-8 col-md-12">
+        <div class="cart-table-wrap">
+          <table class="cart-table">
+            <thead class="cart-table-head">
+              <tr class="table-head-row">
+                <th class="product-remove"></th>
+                <th class="product-image"><% t ".image" %></th>
+                <th class="product-name"><% t ".name" %></th>
+                <th class="product-price"><% t ".price" %></th>
+                <th class="product-quantity"><% t ".quantity" %></th>
+                <th class="product-total"><% t ".total" %></th>
+              </tr>
+            </thead>
+            <tbody class="abc">
+              <% carts.each do |item| %>
+                <tr class="table-body-row">
+                  <td class="product-remove">
+                    <%= link_to cart_path(item.id), method: :delete, data: {confirm: t("confirm")}, remote: true do %>
+                      <i class="far fa-window-close"></i>
+                    <% end %>
+                  </td>
+                  <td class="product-image"> <%= check_thumbnail? item %></td>
+                  <td class="product-name"><%= item.name %></td>
+                  <td class="product-price"><%= number_to_currency(item.price, locale: :vi) %></td>
+                  <td class="product-quantity"><%= session[:cart][item.id.to_s] %></td>
+                  <td class="product-total"><%= number_to_currency(item.price*session[:cart][item.id.to_s], locale: :vi) %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="total-section">
+          <table class="total-table">
+            <thead class="total-table-head">
+              <tr class="table-total-row">
+                <th><%= t ".total" %></th>
+                <th><%= t ".price" %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="total-data">
+                <td><strong><%= t ".subtotal" %>: </strong></td>
+                <td><%= number_to_currency(total, locale: :vi) %></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="cart-buttons">
+            <a href="checkout.html" class="boxed-btn black"><%= t ".process" %></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <h1 class="text-center cart-index-title">
+      <%= t ".no_cart" %>
+    </h1>
+  <% end %>
+</div>

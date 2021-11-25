@@ -338,3 +338,17 @@ vi:
   history_orders: "Lịch Sử Đặt Hàng"
   not_permission: "Không có quyền truy cập!"
   dashboard: "Quản lý trang"
+  carts:
+    index:
+      title: "Giỏ Hàng Của Tôi"
+      fresh: "Hoa quả hữu cơ"
+    cart_index:
+      image: "Hình ảnh"
+      name: "Tên"
+      price: "Giá"
+      total: "Toàn Bộ"
+      quantity: "Số Lượng"
+      subtotal: "Tổng Phụ"
+      process: "Tiến hành kiểm tra"
+      no_cart: "Không có sản phẩm nào trong giỏ hàng "
+  filter_category_nil: "Không có sản phẩm nào thuộc danh mục sản phẩm này!"

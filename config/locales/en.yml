@@ -338,3 +338,17 @@ en:
   history_orders: "History Orders"
   not_permission: "Not permission!"
   dashboard: "Dashboard"
+  carts:
+    index:
+      title: "My Cart"
+      fresh: "Fresh Organic"
+    cart_index:
+      image: "Image"
+      name: "Name"
+      price: "Price"
+      total: "Total"
+      quantity: "Quantity"
+      subtotal: "Subtotal"
+      process: "Proceed to Checkout"
+      no_cart: "No Carts"
+  filter_category_nil: "No products in this product category!"

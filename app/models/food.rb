@@ -7,6 +7,7 @@ class Food < ApplicationRecord
   scope :recent_foods, ->{order created_at: :desc}
   scope :search_by_name,
         ->(name){where "name LIKE ?", "%#{name}%" if name.present?}
+  scope :find_foods_cart, ->(pr_id){where id: pr_id}
   delegate :category_name, to: :category
   enum status: {disabled: 0, enabled: 1}
   has_one_attached :thumbnail
@@ -21,7 +22,12 @@ class Food < ApplicationRecord
       maximum: Settings.length.lenth_max
     }
 
-  validates :price, presence: true, numericality: true
+  validates :price, presence: true,
+                    numericality:
+                    {
+                      only_integer: false,
+                      greater_than_or_equal_to: Settings.init_number
+                    }
 
   validates :description, presence: true,
     length: {
@@ -29,7 +35,12 @@ class Food < ApplicationRecord
       maximum: Settings.length.lenth_max
     }
 
-  validates :quantity, presence: true, numericality: {only_integer: true}
+  validates :quantity, presence: true,
+                       numericality:
+                       {
+                         only_integer: true,
+                         greater_than_or_equal_to: Settings.init_number
+                       }
 
   validates :images,
             content_type:

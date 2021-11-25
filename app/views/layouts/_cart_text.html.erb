@@ -1,0 +1,7 @@
+<%= link_to carts_path,
+    class: "shopping-cart" do %>
+  <i class="fas fa-shopping-cart"></i>
+  <span class="quantity_foods position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">
+    <% @carts.present? ? @carts.count : 0 %>
+  </span>
+<% end %>
