@@ -17,10 +17,10 @@
       <% if @food.enabled? %>
         <div class="col-md-5">
           <div class="single-product-img">
-            <% if check_image? %>
+            <% if check_thumb? @food.thumbnail%>
               <%= image_tag @food.thumbnail %>
             <% else %>
-              <%= gravatar_for @food, size: Settings.medium_size %>
+              <%= gravatar_for @food, size: Settings.max_size %>
             <% end %>
           </div>
         </div>

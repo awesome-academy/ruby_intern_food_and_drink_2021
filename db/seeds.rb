@@ -22,7 +22,6 @@ User.create!(name: "Quan Chung",
   email:"qvchung0@gmail.com",
   password: "chung123",
   password_confirmation: "chung123",
-  role: true,
   activated: true,
   activated_at: Time.zone.now)
 # Fake categorys

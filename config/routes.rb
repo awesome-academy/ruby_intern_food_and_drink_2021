@@ -23,7 +23,11 @@ Rails.application.routes.draw do
     get :login, to: "sessions#new"
     post :login, to: "sessions#create"
     delete :logout, to: "sessions#destroy"
-    resources :users
+    resources :users do
+      resources :orders, only: %i(index show) do
+        put :cancel, on: :member
+      end
+    end
     resources :foods, only: :show
   end
 end

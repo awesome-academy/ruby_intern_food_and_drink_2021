@@ -48,6 +48,10 @@ class User < ApplicationRecord
     update_column :remember_digest, nil
   end
 
+  def all_orders
+    orders.recent_orders
+  end
+
   private
   def downcase_email
     email.downcase!

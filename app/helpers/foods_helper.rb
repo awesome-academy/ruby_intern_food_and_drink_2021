@@ -18,4 +18,8 @@ module FoodsHelper
   def check_quantity? quantity
     quantity.zero?
   end
+
+  def check_thumb? thumbnail
+    thumbnail.attached?
+  end
 end

@@ -17,6 +17,6 @@ class FoodsController < ApplicationController
     return if @food
 
     flash[:danger] = t "show_food_fail"
-    rediract_to root_url
+    redirect_to root_url
   end
 end

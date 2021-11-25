@@ -33,6 +33,14 @@
                   <% if logged_in? %>
                     <li><%= link_to t("profile"), "#" %></li>
                     <li><%= link_to t("setting"), "#" %></li>
+                    <% if current_user.role? %>
+                      <li>
+                        <%= link_to t("dashboard"), admin_root_path %>
+                      </li>
+                    <% end %>
+                    <li>
+                      <%= link_to t("history_orders"), user_orders_path(current_user) %>
+                    </li>
                     <li>
                       <%= link_to t("log_out"), logout_path, method: :delete %>
                     </li>
