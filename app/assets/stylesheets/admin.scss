@@ -50,3 +50,40 @@
   font-size: 15px;
   transition: 0.2s ease;
 }
+
+.horizontal-timeline .items {
+  border-top: 2px solid $gray_white;
+}
+.horizontal-timeline .items .items-list {
+  position: relative;
+  margin-right: 0;
+}
+.horizontal-timeline .items .items-list:before {
+  content: "";
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: $gray_white;
+  top: 0;
+  margin-top: -5px;
+}
+.horizontal-timeline .items .items-list {
+  padding-top: 15px;
+}
+.nav-md{
+  background-color: $white;
+}
+
+.infor_order{
+  font-size: 18px;
+}
+
+.infor_col p{
+  font-weight: bold;
+}
+
+.total-order{
+  margin-right: 50px;
+  font-size: 20px;
+}

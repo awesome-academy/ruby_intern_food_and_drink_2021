@@ -54,11 +54,10 @@
               <span class="fa fa-chevron-right" aria-hidden="true"></span>
             </a>
             <ul class="nav child_menu">
-              <li><%= link_to t("status_order.open"), "#" %></li>
-              <li><%= link_to t("status_order.confirmed"), "#" %></li>
-              <li><%= link_to t("status_order.shipping"), "#" %></li>
-              <li><%= link_to t("status_order.completed"), "#" %></li>
-              <li><%= link_to t("status_order.cancelled"), "#" %></li>
+              <li><%= link_to t("all"), admin_orders_path %></li>
+              <% Order.statuses.keys.each do |sta|%>
+                <li><%= link_to t("status_order.#{sta}"), admin_status_path(status: sta) %></li>
+              <% end%>
             </ul>
           </li>
         </ul>

@@ -1,0 +1,27 @@
+<section class="h-100 h-custom">
+  <div class="container py-2">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card border-top border-bottom border-3">
+          <div class="card-body p-5">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="horizontal-timeline">
+                  <ul class="list-inline items d-flex justify-content-between">
+                    <% i=0 %>
+                    <% Order.statuses.keys.each do |sta|%>
+                      <li class="list-inline-item items-list">
+                        <%= link_to t(".#{sta}"), admin_status_path(status: sta), class: "btn #{Settings.button[i].name}" %>
+                        <% i=i+1 %>
+                      </li>
+                    <% end%>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
