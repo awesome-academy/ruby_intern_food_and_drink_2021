@@ -156,8 +156,40 @@ en:
       new:
         button: "Add Category"
         name: "Name Category"
+    orders:
+      index:
+        order_id: "Orders id"
+        fullname: "Full name"
+        phone: "Phone"
+        address: "Address"
+        total_price: "Total price"
+        status: "Status"
+        action: "Action"
+        order_cancelled: "Order cancelled"
+        update_fail: "Cancel fail!"
+        no_order: "No order"
+        all: "All"
+        created_order: "Order day"
+      status:
+        open: "Open"
+        confirmed: "Confirmed"
+        shipping: "Shipping"
+        completed: "Completed"
+        cancelled: "Cancelled"
+      order:
+        open: "badge-primary"
+        confirmed: "badge-info"
+        shipping: "badge-secondary"
+        completed: "badge-success"
+        cancelled: "badge-danger"
   category_deleted: "Category deleted"
   delete_fail: "Delete fail"
   sure: "Sure delete ?"
   add_success: "Add Success"
   add_fail: "Add Fail"
+  time:
+    formats:
+      own: "%H:%M:%S, %d %B %Y"
+  you_sure: "Are you sure?"
+  error_path: "Error path"
+  all: "All"

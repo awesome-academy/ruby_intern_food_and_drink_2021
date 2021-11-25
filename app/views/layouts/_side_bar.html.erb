@@ -54,11 +54,12 @@
               <span class="fa fa-chevron-right" aria-hidden="true"></span>
             </a>
             <ul class="nav child_menu">
-              <li><%= link_to t("status_order.open"), "#" %></li>
-              <li><%= link_to t("status_order.confirmed"), "#" %></li>
-              <li><%= link_to t("status_order.shipping"), "#" %></li>
-              <li><%= link_to t("status_order.completed"), "#" %></li>
-              <li><%= link_to t("status_order.cancelled"), "#" %></li>
+              <li><%= link_to t("all"), admin_orders_path %></li>
+              <li><%= link_to t("status_order.open"), admin_status_path(status: :open) %></li>
+              <li><%= link_to t("status_order.confirmed"), admin_status_path(status: :confirmed) %></li>
+              <li><%= link_to t("status_order.shipping"), admin_status_path(status: :shipping) %></li>
+              <li><%= link_to t("status_order.completed"), admin_status_path(status: :completed) %></li>
+              <li><%= link_to t("status_order.cancelled"), admin_status_path(status: :cancelled) %></li>
             </ul>
           </li>
         </ul>
