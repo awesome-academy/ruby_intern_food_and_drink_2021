@@ -1,5 +1,6 @@
 <div class="form-new">
   <%= form_for [:admin, @food] do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
     <div class="text">
       <%= f.label :thumbnail, t(".thumbnail") %><br>
     </div>
@@ -40,9 +41,15 @@
             <%= image_tag @food.display_image(img) if @food.images.attached? %>
             </br>
             </br>
-            <%= f.file_field :images, multiple: true %>
           </div>
         <% end %>
+      </div>
+      <div class="container-images-show">
+        <div class="image-show">
+          <%= f.file_field :images, multiple: true %>
+          <%= f.file_field :images, multiple: true %>
+          <%= f.file_field :images, multiple: true %>
+        </div>
       </div>
     </div>
     <div class="submit-form-index">

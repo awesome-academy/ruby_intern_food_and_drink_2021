@@ -23,11 +23,10 @@ Rails.application.routes.draw do
     post :login, to: "sessions#create"
     delete :logout, to: "sessions#destroy"
     resources :users do
-      resources :orders, only: %i(index show) do
-        put :cancel, on: :member
-      end
+      resources :orders
     end
     resources :foods, only: :show
     resources :carts
+    resources :orders, only: %i(new create)
   end
 end

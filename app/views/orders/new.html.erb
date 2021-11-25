@@ -1,0 +1,94 @@
+<% provide :title, t(".title") %>
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <div class="breadcrumb-text">
+          <p><%= t ".fresh" %></p>
+          <h1><%= t ".title" %></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end breadcrumb section -->
+
+<!-- check out section -->
+<div class="checkout-section mt-150 mb-150">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="checkout-accordion-wrap">
+          <div class="accordion" id="accordionExample">
+            <div class="card single-accordion">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" type="button">
+                    <%= t ".bill_add" %>
+                  </button>
+                </h5>
+              </div>
+
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                  <%= form_tag orders_path, method: :post do %>
+                    <%= label_tag :phone, t(".phone") %>
+                    <%= text_field_tag :phone, nil, class:"text" %>
+                    <%= label_tag :address, t(".address") %>
+                    <%= text_field_tag :address, nil, class:"text" %>
+                    <div class="text">
+                      <%= submit_tag t ".place_order", class: "boxed-btn" %>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="order-details-wrap">
+          <table class="order-details">
+            <thead>
+              <tr>
+                <th><%= t ".your_order" %></th>
+                <th><%= t ".price" %></th>
+              </tr>
+            </thead>
+            <tbody class="order-details-body">
+              <tr>
+                <td><%= t ".product" %></td>
+                <td><%= t ".total" %></td>
+              </tr>
+              <% @carts.each do |item| %>
+                <tr>
+                  <td><%= item.name %></td>
+                  <td>
+                    <%= number_to_currency(item.price*session[:cart]["#{item.id}"], locale: :vi) %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+            <tbody class="checkout-details">
+              <tr>
+                <td><%= t ".subtotal" %></td>
+                <td><%= number_to_currency(@total, locale: :vi) %></td>
+              </tr>
+              <tr>
+                <td><%= t ".shipping" %></td>
+                <td><%= number_to_currency(Settings.ship, locale: :vi) %></td>
+              </tr>
+              <tr>
+                <td><%= t ".total" %></td>
+                <td><%= number_to_currency(@total + Settings.ship, locale: :vi) %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end check out section -->

@@ -1,6 +1,6 @@
-<%= link_to approve_admin_order_path(@order), method: :put, data: { confirm: t("you_sure") }, class: "btn btn-info btn-sm" do %>
+<%= link_to approve_admin_order_path(order), method: :put, data: { confirm: t("you_sure") }, class: "btn btn-info btn-sm" do %>
   <i class="fa fa-check" aria-hidden="true"></i>
 <% end %>
-<%= link_to reject_admin_order_path(@order), method: :put, data: { confirm: t("you_sure") }, class: "btn btn-danger btn-sm" do %>
+<%= link_to reject_admin_order_path(order), method: :put, data: { confirm: t("you_sure") }, class: "btn btn-danger btn-sm" do %>
   <i class="fa fa-times" aria-hidden="true"></i>
 <% end %>

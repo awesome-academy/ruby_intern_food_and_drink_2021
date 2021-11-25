@@ -19,7 +19,6 @@ class Admin::OrdersController < Admin::AdminsController
     ActiveRecord::Base.transaction do
       if @order.open?
         check_quantity_food
-        update_quantity_food :-
         @order.shipping!
         send_mail
         flash[:success] = t "approve_success"
@@ -40,7 +39,7 @@ class Admin::OrdersController < Admin::AdminsController
   def reject
     ActiveRecord::Base.transaction do
       if !@order.cancelled? && !@order.completed?
-        update_quantity_food :+ unless @order.open?
+        update_quantity_food :+
         @order.cancelled!
         send_mail
       else

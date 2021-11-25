@@ -28,4 +28,8 @@ class ApplicationController < ActionController::Base
     qtity = session[:cart]
     @carts = Food.find_foods_cart(qtity.keys)
   end
+
+  def categories_select_id_name
+    @categories = Category.select(:id, :category_name)
+  end
 end

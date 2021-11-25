@@ -36,7 +36,7 @@
             </div>
             <div class="col-md-6 text-right">
               <% if @order.open? %>
-                <%= link_to cancel_user_order_path(current_user, @order),
+                <%= link_to user_order_path(current_user, @order),
                     method: :put, data: { confirm: t("you_sure") } do %>
                   <button type="button" class="btn btn-danger btn-sm mb-4">
                     <i class="fa fa-times" aria-hidden="true"><%= t ".cancel" %></i>
