@@ -4,6 +4,7 @@ length:
   min_8: 8
   max_100: 100
   max_250: 250
+  lenth_max: 300
 email_regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 gravatar:
   small_size: 50
