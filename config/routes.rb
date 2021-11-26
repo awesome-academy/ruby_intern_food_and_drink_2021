@@ -4,6 +4,8 @@ Rails.application.routes.draw do
       root "admins#index"
       resources :foods
       resources :categories
+      resources :orders
+      get "order_status/:status", to: "orders#index_by_status", as: :status
     end
 
     root "static_pages#home"

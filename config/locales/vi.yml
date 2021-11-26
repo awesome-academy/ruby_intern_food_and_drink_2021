@@ -125,8 +125,40 @@ vi:
       new:
         button: "Thêm Danh mục"
         name: "Tên Danh Mục"
+    orders:
+      index:
+        order_id: "Mã đơn hàng"
+        fullname: "Họ tên"
+        phone: "Điện thoại"
+        address: "Địa chỉ"
+        total_price: "Tổng tiền"
+        status: "Trạng thái"
+        action: "Hành động"
+        order_cancelled: "Đã hủy đơn hàng!"
+        update_fail: "Thất bại!"
+        no_order: "Không có đơn hàng"
+        all: "Tất cả"
+        created_order: "Ngày đặt"
+      status:
+        open: "Chờ xác nhận"
+        confirmed: "Đã xác nhận"
+        shipping: "Đang chuyển hàng"
+        completed: "Hoàn thành"
+        cancelled: "Đã hủy"
+      order:
+        open: "badge-primary"
+        confirmed: "badge-info"
+        shipping: "badge-secondary"
+        completed: "badge-success"
+        cancelled: "badge-danger"
   category_deleted: "Danh mục đã được xóa"
   delete_fail: "Xóa lỗi"
   sure: "Chắc chắn muốn xóa ?"
   add_success: "Thêm Thành Công"
   add_fail: "Thêm Thất Bại"
+  time:
+    formats:
+      own: "%H:%M:%S, %d %B %Y"
+  you_sure: "Bạn có chắc chắn?"
+  error_path: "Lỗi đường dẫn"
+  all: "Tất cả"
