@@ -10,3 +10,10 @@ gravatar:
   small_size: 50
   medium_size: 80
 per_page: 15
+open: "badge-primary"
+confirmed: "badge-info"
+shipping: "badge-secondary"
+completed: "badge-success"
+cancelled: "badge-danger"
+button: [ {name: btn-primary}, {name: btn-info}, {name: btn-secondary},
+          {name: btn-success}, {name: btn-danger}]

@@ -1,0 +1,30 @@
+<tr>
+  <td><%= l order.created_at, format: :own %></td>
+  <td><%= order.user_name %></td>
+  <td><%= order.phone %></td>
+  <td><%= order.address %></td>
+  <td>
+    <%= total_price(order) %>
+  </td>
+  <td>
+    <h5>
+      <span class="badge btn <%= Settings.send(order.status) %>">
+        <%= t "status_order.#{order.status}" %>
+      </span>
+    </h5>
+  </td>
+  <td>
+    <%= link_to admin_order_path(order) do %>
+      <button type="button" class="btn btn-primary btn-sm">
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      </button>
+    <% end %>
+    <% unless order.cancelled? %>
+      <%= link_to "#" do %>
+        <button type="button" class="btn btn-danger btn-sm">
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </button>
+      <% end %>
+    <% end %>
+  </td>
+</tr>

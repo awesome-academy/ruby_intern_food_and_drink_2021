@@ -36,3 +36,27 @@ categories = Category.order(:created_at).take(6)
                            status: true)
   end
 end
+# Fake orders
+User.all.sample(10).each do |user|
+  phone = Faker::PhoneNumber.cell_phone
+  address = Faker::Address.full_address
+  food = Food.all.sample(1)
+  order = user.orders.create!(
+    phone: phone,
+    address: address)
+  order.carts.create!(
+    quantity: 2,
+    food_id: food[0].id)
+end
+User.all.sample(2).each do |user|
+  phone = Faker::PhoneNumber.cell_phone
+  address = Faker::Address.full_address
+  food = Food.all.sample(1)
+  order = user.orders.create!(
+    phone: phone,
+    address: address,
+    status: "shipping")
+  order.carts.create!(
+    quantity: 2,
+    food_id: food[0].id)
+end
