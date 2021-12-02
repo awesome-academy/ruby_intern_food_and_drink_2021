@@ -33,7 +33,7 @@ categories = Category.order(:created_at).take(6)
                            price: 100000,
                            description: description,
                            quantity: 3,
-                           status: true)
+                           status: 1)
   end
 end
 # Fake orders

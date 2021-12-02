@@ -1,0 +1,44 @@
+<div class="form-new">
+  <%= form_for [:admin, @food] do |f| %>
+    <div class="text">
+      <%= f.label :thumbnail, t(".thumbnail") %><br>
+    </div>
+    <%= f.file_field :thumbnail %>
+    <div class="text">
+      <%= f.label :name, t(".name") %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="text">
+      <%= f.label :price, t(".price") %>
+      <%= f.text_field :price, class: "form-control" %>
+    </div>
+    <div class="text">
+      <%= f.label :description, t(".description") %>
+      <%= f.text_field :description, class: "form-control" %>
+    </div>
+    <div class="text">
+      <%= f.label :quantity, t(".quantity") %>
+      <%= f.text_field :quantity, class: "form-control" %>
+    </div>
+    <div class="text">
+      <%= f.label :status, t(".status") %>
+      <%= f.select :status, ["enabled", "disabled"]%>
+    </div>
+    <div class="text">
+      <%= f.label :category_id, t(".category") %>
+      <%= f.collection_select :category_id, Category.all, :id, :category_name,
+        class: "form-control" %><br>
+      <%= f.fields_for :category do |cate| %>
+      <% end %>
+    </div>
+      <%= f.label :images, t(".images") %>
+    </div>
+    <%= f.file_field :images, multiple: true %>
+    <%= f.file_field :images, multiple: true %>
+    <%= f.file_field :images, multiple: true %>
+    <div class="submit-form-index">
+      <%= f.submit t(".button"),
+          class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

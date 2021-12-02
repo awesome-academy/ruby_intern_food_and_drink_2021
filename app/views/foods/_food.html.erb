@@ -1,0 +1,14 @@
+<div class="col-lg-4 col-md-6 text-center">
+  <div class="single-product-item">
+    <div class="product-image">
+      <% if food.thumbnail.present? %>
+        <%= link_to image_tag(food.display_thumbnail Settings.reresize_thumbnail_max), food_path(food) %><br>
+      <% else %>
+        <%= link_to (gravatar_for food, size: Settings.gravatar.max_size), food_path(food) %><br>
+      <% end %>
+    </div>
+    <h3><%= food.name %></h3>
+    <p class="product-price"><span><%= t ".per_kg" %></span> <%= number_to_currency(food.price, locale: :vi) %> </p>
+    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> <%= t ".add_to_cart" %></a>
+  </div>
+</div>

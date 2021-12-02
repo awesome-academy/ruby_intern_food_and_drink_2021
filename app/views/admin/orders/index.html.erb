@@ -45,7 +45,15 @@
                 </div>
               </div>
             </div>
-            <%= paginate @orders, theme: "twitter-bootstrap-3"%>
+            <div class="row">
+              <div class="col-lg-12 text-center">
+                <div class="pagination-wrap">
+                  <ul>
+                    <%= paginate @orders, theme: "twitter-bootstrap-3" %>
+                  </ul>
+                </div>
+              </div>
+            </div>
           <% else %>
             <h1 class="text-center cart-index-title">
               <%= t ".no_order" %>

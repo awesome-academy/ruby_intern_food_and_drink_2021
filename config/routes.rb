@@ -20,5 +20,6 @@ Rails.application.routes.draw do
     post :login, to: "sessions#create"
     delete :logout, to: "sessions#destroy"
     resources :users
+    resources :foods, only: :show
   end
 end
