@@ -209,3 +209,13 @@
 .pagination-wrap ul li a.active {
   background-color: $orange_light;
 }
+
+
+.images-update{
+  padding: 10px
+}
+
+.required:after {
+  content:"*";
+  color:$red;
+}

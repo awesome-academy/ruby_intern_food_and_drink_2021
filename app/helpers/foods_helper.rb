@@ -8,6 +8,14 @@ module FoodsHelper
   end
 
   def check_image?
-    @food.thumbnail.attached?
+    if @food.thumbnail.attached?
+      image_tag(@food.display_thumbnail)
+    else
+      gravatar_for @food, size: Settings.medium_size
+    end
+  end
+
+  def check_quantity? quantity
+    quantity.zero?
   end
 end

@@ -5,8 +5,9 @@
     <div class="row">
       <div class="col-lg-8 offset-lg-2 text-center">
         <div class="breadcrumb-text">
-          <p>Fresh and Organic</p>
-          <h1>Shop</h1>
+          <p><%= t ".fresh" %></p>
+          <h1><%= t ".title" %></h1>
+          <%= render "shared/filter_products_by_name" %>
         </div>
       </div>
     </div>
@@ -48,7 +49,7 @@
     <% else %>
       <div class="row product-lists">
         <div class="row justify-content-center alert alert-danger">
-          <h4 class="mb-4"><%= t "home_page.our_products_nil" %></h4>
+          <h4 class="mb-4"><%= t ".our_products_nil" %></h4>
         </div>
       </div>
     <% end %>

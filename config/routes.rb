@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
     root "static_pages#home"
     get "/home", to: "static_pages#home"
-    get "/shop", to: "static_pages#shop"
+    get "/shop", to: "foods#index"
     get "/about", to: "static_pages#about"
     get "/contact", to: "static_pages#contact"
     get "/cart", to: "static_pages#cart"

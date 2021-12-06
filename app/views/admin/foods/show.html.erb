@@ -34,20 +34,16 @@
   <tbody>
     <tr class="tr-body-show">
       <td class="td-body-show">
-        <% if check_image? %>
-          <%= image_tag @food.display_thumbnail %>
-        <% else %>
-          <%= gravatar_for @food, size: Settings.medium_size %>
-        <% end %>
+        <%= check_image? %>
       </td>
       <td class="td-name-body-show"><%= @food.name %></td>
       <td class="td-body-show"><%= @food.price %></td>
       <td class="td-body-show"><%= @food.description %></td>
       <td class="td-body-show"><%= @food.quantity %></td>
-      <td class="td-body-show"><%= @food.status %></td>
+      <td class="td-body-show badge badge-primary"><%= @food.status %></td>
       <td class="td-body-show"><%= @food.category.category_name %></td>
       <td>
-        <%= link_to "#" do %>
+        <%= link_to edit_admin_food_path(@food) do %>
           <button type="button" class="btn btn-primary btn-sm">
             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
           </button>

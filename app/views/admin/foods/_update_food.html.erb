@@ -1,44 +1,52 @@
 <div class="form-new">
   <%= form_for [:admin, @food] do |f| %>
     <div class="text">
-      <%= f.label :thumbnail, class: "required" %>
-      <br>
+      <%= f.label :thumbnail, t(".thumbnail") %><br>
+    </div>
+    <div class="text mb-2">
+        <%= check_image? %>
     </div>
     <%= f.file_field :thumbnail %>
     <div class="text">
       <%= f.label :name, t(".name"), class: "required" %>
       <%= f.text_field :name, class: "form-control" %>
     </div>
-    <div class="text">
+    <div class="text mt-2">
       <%= f.label :price, t(".price"), class: "required" %>
       <%= f.text_field :price, class: "form-control" %>
     </div>
-    <div class="text">
+    <div class="text mt-2">
       <%= f.label :description, t(".description"), class: "required" %>
       <%= f.text_field :description, class: "form-control" %>
     </div>
-    <div class="text">
+    <div class="text mt-2">
       <%= f.label :quantity, t(".quantity"), class: "required" %>
       <%= f.text_field :quantity, class: "form-control" %>
     </div>
-    <div class="text">
+    <div class="text mt-2">
       <%= f.label :status, t(".status") %>
-      <%= f.select :status, ["enabled", "disabled"]%>
+      <%= f.select :status, Food.statuses.keys %>
     </div>
     <div class="text">
       <%= f.label :category_id, t(".category") %>
       <%= f.collection_select :category_id, Category.all, :id, :category_name,
         class: "form-control" %><br>
-      <%= f.fields_for :category do |cate| %>
-      <% end %>
     </div>
-      <%= f.label :images, t(".images"), class: "required" %>
+    <div class="lable-form-index">
+      <%= f.label :images, t(".images") %>
+      <div class="container-images-show">
+        <% @food.images.each do |img| %>
+          <div class="image-show">
+            <%= image_tag @food.display_image(img) if @food.images.attached? %>
+            </br>
+            </br>
+            <%= f.file_field :images, multiple: true %>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <%= f.file_field :images, multiple: true %>
-    <%= f.file_field :images, multiple: true %>
-    <%= f.file_field :images, multiple: true %>
     <div class="submit-form-index">
-      <%= f.submit t(".button"),
+      <%= f.submit t(".submit"),
           class: "btn btn-primary" %>
     </div>
   <% end %>

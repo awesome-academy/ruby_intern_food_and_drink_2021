@@ -55,6 +55,8 @@ vi:
       title: "Liên hệ"
     shop:
       title: "Cửa hàng"
+      fresh: "Hoa Quả Tươi"
+      our_products_nil: "Không có sản phẩm nào"
     cart:
       title: "Giỏ hàng"
     checkout:
@@ -78,6 +80,8 @@ vi:
     error_messages:
       contain: "Biểu mẫu này chứa"
       error: "lỗi"
+    filter_products_by_name:
+      search: "Tìm Kiếm"
   log_in:
     log_in: "Đăng Nhập"
     sign_up_now: "Đăng Ký Ngay!"
@@ -135,6 +139,22 @@ vi:
         button: "Thêm Sản Phẩm"
         enabled: "đã được kích hoạt"
         disabled: "chưa được kích hoạt"
+      edit:
+        title: "Cập Nhật Sản Phẩm"
+      update_food:
+        title: "Cập Nhật Sản Phẩm"
+        thumbnail: "Hình đại diện"
+        name: "Tên"
+        price: "Giá"
+        description: "Mô Tả"
+        quantity: "Số Lượng"
+        status: "Trạng Thái"
+        category: "Phân Loại"
+        images: "Hình ảnh"
+        button: "Thêm Sản Phẩm"
+        enabled: "đã được kích hoạt"
+        disabled: "chưa được kích hoạt"
+        submit: "Lưu"
     categories:
       index:
         title: "Tất cả Danh Mục"
@@ -208,6 +228,8 @@ vi:
     food:
       per_kg: "Mỗi Kg"
       add_to_cart: "Thêm vào giỏ hàng"
+      quantity: "Số lượng"
+      sold_out: "Hết hàng"
     show:
       per_kg: "Mỗi Kg"
       add_to_cart: "Thêm vào giỏ hàng"
@@ -219,3 +241,6 @@ vi:
       status: "Trạng thái"
       out_of_stock: "Hết hàng"
       food_disabled: "Thực phẩm bị vô hiệu hóa"
+  update_success: "Cập Nhật Thành Công"
+  update_fail: "Cập Nhật Lỗi!"
+  show_failer: "Hiển Thị Lỗi"

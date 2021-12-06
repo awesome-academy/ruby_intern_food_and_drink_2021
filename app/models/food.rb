@@ -5,6 +5,8 @@ class Food < ApplicationRecord
   has_many :carts, dependent: :destroy
   has_many :orders, through: :order_details
   scope :recent_foods, ->{order created_at: :desc}
+  scope :search_by_name,
+        ->(name){where "name LIKE ?", "%#{name}%" if name.present?}
   delegate :category_name, to: :category
   enum status: {disabled: 0, enabled: 1}
   has_one_attached :thumbnail

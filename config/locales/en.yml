@@ -55,6 +55,8 @@ en:
       title: "Contact"
     shop:
       title: "Shop"
+      fresh: "Fresh and Organic"
+      our_products_nil: "No Product"
     cart:
       title: "Cart"
     checkout:
@@ -78,6 +80,8 @@ en:
     error_messages:
       contain: "The form contains"
       error: "error"
+    filter_products_by_name:
+      search: "Search"
   log_in:
     log_in: "Log In"
     sign_up_now: "Sign Up Now!"
@@ -135,6 +139,22 @@ en:
         button: "Add Product"
         enabled: "enabled"
         disabled: "disabled"
+      edit:
+        title: "Update Product"
+      update_form:
+        title: "Update Product"
+        thumbnail: "Thumbnail"
+        name: "Name"
+        price: "Price"
+        description: "Description"
+        quantity: "Quantity"
+        status: "Status"
+        category: "Category"
+        images: "Images"
+        button: "Add Product"
+        enabled: "enabled"
+        disabled: "disabled"
+        submit: "Save"
     categories:
       index:
         title: "All Categories"
@@ -208,6 +228,8 @@ en:
     food:
       per_kg: "Per Kg"
       add_to_cart: "Add to cart"
+      quantity: "Quantity"
+      sold_out: "Sold Out"
     show:
       per_kg: "Per Kg"
       add_to_cart: "Add to cart"
@@ -219,3 +241,6 @@ en:
       status: "Status"
       out_of_stock: "Out of stock"
       food_disabled: "Food disabled"
+  update_success: "Update Success"
+  update_fail: "Update Fail!"
+  show_failer: "Show Failer"
