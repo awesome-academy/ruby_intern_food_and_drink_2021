@@ -16,15 +16,9 @@
   <td>
     <%= link_to admin_order_path(order) do %>
       <button type="button" class="btn btn-primary btn-sm">
-        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        <i class="fa fa-eye" aria-hidden="true"></i>
       </button>
     <% end %>
-    <% unless order.cancelled? %>
-      <%= link_to "#" do %>
-        <button type="button" class="btn btn-danger btn-sm">
-          <i class="fa fa-trash-o" aria-hidden="true"></i>
-        </button>
-      <% end %>
-    <% end %>
+    <%= render "order_button" %>
   </td>
-</tr>
+</tr

@@ -18,6 +18,13 @@ User.create!(name: "Quan Van Chung",
                    activated: true,
                    activated_at: Time.zone.now)
 end
+User.create!(name: "Quan Chung",
+  email:"qvchung0@gmail.com",
+  password: "chung123",
+  password_confirmation: "chung123",
+  role: true,
+  activated: true,
+  activated_at: Time.zone.now)
 # Fake categorys
 10.times do |n|
   name = Faker::Food.ingredient
@@ -60,3 +67,11 @@ User.all.sample(2).each do |user|
     quantity: 2,
     food_id: food[0].id)
 end
+user = User.last
+food = Food.all.sample(1)
+order = user.orders.create!(
+  phone: Faker::PhoneNumber.cell_phone,
+  address: Faker::Address.full_address)
+order.carts.create!(
+  quantity: 2,
+  food_id: food[0].id)

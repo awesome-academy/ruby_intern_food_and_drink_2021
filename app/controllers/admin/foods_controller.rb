@@ -1,5 +1,5 @@
 class Admin::FoodsController < Admin::AdminsController
-  before_action :load_food, only: %i(show edit update)
+  before_action :load_food, except: %i(index new create)
 
   def index
     @foods = Food.recent_foods.page(params[:page]).per(Settings.per_page)
@@ -34,6 +34,17 @@ class Admin::FoodsController < Admin::AdminsController
       render :edit
     end
   end
+
+  def destroy
+    @carts = Cart.find_cart(@food.id)
+    if @carts.present?
+      check_status
+    else
+      @food.destroy
+      flash[:success] = t "destroy_success"
+    end
+    redirect_to admin_foods_path
+  end
   private
 
   def food_params
@@ -48,5 +59,14 @@ class Admin::FoodsController < Admin::AdminsController
 
     flash[:danger] = t "show_failer"
     redirect_to admin_foods_path
+  end
+
+  def check_status
+    if @food.enabled?
+      @food.disabled!
+      flash[:success] = t "change_status"
+    else
+      flash[:danger] = t "no_delete"
+    end
   end
 end

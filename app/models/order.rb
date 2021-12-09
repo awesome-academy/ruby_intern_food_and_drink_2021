@@ -2,7 +2,7 @@ class Order < ApplicationRecord
   belongs_to :user
   has_many :carts, dependent: :destroy
   has_many :foods, through: :order_details
-  delegate :name, to: :user, prefix: true
+  delegate :name, :email, to: :user, prefix: true
   enum status: {
     open: 0,
     confirmed: 1,

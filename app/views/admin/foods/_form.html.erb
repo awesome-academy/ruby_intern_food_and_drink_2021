@@ -1,7 +1,7 @@
 <div class="form-new">
   <%= form_for [:admin, @food] do |f| %>
     <div class="text">
-      <%= f.label :thumbnail, class: "required" %>
+      <%= f.label :thumbnail, t(".thumbnail"), class: "required" %>
       <br>
     </div>
     <%= f.file_field :thumbnail %>
