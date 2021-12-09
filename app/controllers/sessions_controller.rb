@@ -21,6 +21,10 @@ class SessionsController < ApplicationController
   def check_activated? user
     log_in user
     params[:session][:remember_me] == "1" ? remember(user) : forget(user)
-    redirect_to root_url
+    if user.role?
+      redirect_back_or admin_root_path
+    else
+      redirect_back_or root_url
+    end
   end
 end

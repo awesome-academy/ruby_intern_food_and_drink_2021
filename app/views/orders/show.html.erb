@@ -1,0 +1,77 @@
+<% provide :title, t(".title") %>
+<div class="breadcrumb-section breadcrumb-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <div class="breadcrumb-text">
+          <h1><%= t ".title" %></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body p-0">
+          <div class="row pb-5 p-5">
+            <div class="col-md-2">
+              <p class="mb-1"><%= t ".fullname" %>:</p>
+              <p class="mb-1"><%= t ".address" %>:</p>
+              <p class="mb-1"><%= t ".phone" %>:</p>
+              <p class="mb-1"><%= t ".created_order" %>:</p>
+              <p class="mb-1"><%= t ".status" %>:</p>
+            </div>
+            <div class="col-md-4">
+              <p class="mb-1"><%= @order.user_name %></p>
+              <p class="mb-1"><%= @order.phone %></p>
+              <p class="mb-1"><%= @order.address %></p>
+              <p class="mb-1"><%= l @order.created_at, format: :own %></p>
+              <p class="mb-1">
+                <span class="badge <%= Settings.send(@order.status) %>">
+                  <%= t("status_order.#{@order.status}") %>
+                </span>
+              </p>
+            </div>
+            <div class="col-md-6 text-right">
+              <% if @order.open? %>
+                <%= link_to cancel_user_order_path(current_user, @order),
+                    method: :put, data: { confirm: t("you_sure") } do %>
+                  <button type="button" class="btn btn-danger btn-sm mb-4">
+                    <i class="fa fa-times" aria-hidden="true"><%= t ".cancel" %></i>
+                  </button>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+          <div class="row p-5">
+            <div class="col-md-12">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="border-0 text-uppercase small font-weight-bold"></th>
+                    <th class="border-0 text-uppercase small font-weight-bold"><%= t ".product_name" %></th>
+                    <th class="border-0 text-uppercase small font-weight-bold"><%= t ".quantity" %></th>
+                    <th class="border-0 text-uppercase small font-weight-bold"><%= t ".price" %></th>
+                    <th class="border-0 text-uppercase small font-weight-bold"><%= t ".total_price" %></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <%= render partial: "cart", collection: @carts %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="d-flex flex-row-reverse bg-light text-dark p-4">
+            <div class="py-3 px-5 text-right">
+              <div class="mb-2"><%= t ".total" %></div>
+              <div class="h2 font-weight-light"><%= number_to_currency(@total, locale: :vi) %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-5 mb-5"></div>
+</div>

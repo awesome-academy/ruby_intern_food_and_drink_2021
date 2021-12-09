@@ -1,0 +1,19 @@
+<tr>
+  <td>
+    <% if check_thumb? cart.food_thumbnail %>
+      <%= image_tag cart.food_thumbnail, class: "image-order" %>
+    <% else %>
+      <%= gravatar_for cart.food %>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to food_path(cart.food) do %>
+      <span><%= cart.food_name %></span>
+    <% end %>
+  </td>
+  <td><%= cart.quantity %></td>
+  <td><%= number_to_currency(cart.food_price, locale: :vi) %></td>
+  <td>
+    <%= number_to_currency(cart.food_price*cart.quantity, locale: :vi) %>
+  </td>
+</tr>
