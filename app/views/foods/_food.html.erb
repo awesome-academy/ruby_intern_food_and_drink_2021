@@ -14,6 +14,8 @@
       <h4><%= t ".quantity" %>: <%= food.quantity %></h4>
     <% end %>
     <p class="product-price"><span><%= t ".per_kg" %></span> <%= number_to_currency(food.price, locale: :vi) %> </p>
-    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> <%= t ".add_to_cart" %></a>
+    <%= link_to carts_path(food_id: food, quantity: 1), method: :post, class: "cart-btn", remote: true do %>
+      <i class="fas fa-shopping-cart"></i> <%= t ".add_to_cart" %>
+    <% end %>
   </div>
 </div>

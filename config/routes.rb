@@ -17,7 +17,6 @@ Rails.application.routes.draw do
     get "/shop", to: "foods#index"
     get "/about", to: "static_pages#about"
     get "/contact", to: "static_pages#contact"
-    get "/cart", to: "static_pages#cart"
     get "/checkout", to: "static_pages#checkout"
     get "/single", to: "static_pages#single"
     get :login, to: "sessions#new"
@@ -29,5 +28,6 @@ Rails.application.routes.draw do
       end
     end
     resources :foods, only: :show
+    resources :carts
   end
 end

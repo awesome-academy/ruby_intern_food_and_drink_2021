@@ -1,0 +1,3 @@
+$(".header-icons").html("<%= escape_javascript(render 'layouts/cart_text') %>")
+$('.quantity_foods').html('<%= @carts.count %>');
+$(".cart_f").html("<%= escape_javascript(render 'carts/cart_index', carts: @carts, total: @total) %>")

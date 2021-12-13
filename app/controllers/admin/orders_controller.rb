@@ -40,7 +40,7 @@ class Admin::OrdersController < Admin::AdminsController
   def reject
     ActiveRecord::Base.transaction do
       if !@order.cancelled? && !@order.completed?
-        update_quantity_food :-
+        update_quantity_food :+ unless @order.open?
         @order.cancelled!
         send_mail
       else

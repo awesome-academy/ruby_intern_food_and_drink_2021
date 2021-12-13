@@ -1,0 +1,23 @@
+<% provide :title, t(".title") %>
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg" style="background-image: url(/assets/img/news-bg-3.jpg);">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <div class="breadcrumb-text">
+          <p><%= t ".fresh" %></p>
+          <h1><%= t ".title" %></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end breadcrumb section -->
+
+<!-- cart -->
+<div class="cart-section mt-150 mb-150">
+  <div class="cart_f">
+    <%= render "cart_index",carts: @carts,total: @total %>
+  </div>
+</div>
+<!-- end cart -->
