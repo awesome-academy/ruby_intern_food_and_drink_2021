@@ -31,3 +31,5 @@ resize_thumbnail_max: "250x250!"
 out_of_stock: 0
 quantity_min: 1
 init_number: 0
+ship: 50000
+phone_regex: !ruby/regexp /\d[0-9]\)*\z/

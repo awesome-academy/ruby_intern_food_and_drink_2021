@@ -1,5 +1,6 @@
 <div class="form-new">
   <%= form_for [:admin, @food] do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
     <div class="text">
       <%= f.label :thumbnail, t(".thumbnail"), class: "required" %>
       <br>

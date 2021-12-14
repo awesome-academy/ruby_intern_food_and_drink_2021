@@ -8,6 +8,8 @@ class Food < ApplicationRecord
   scope :search_by_name,
         ->(name){where "name LIKE ?", "%#{name}%" if name.present?}
   scope :find_foods_cart, ->(pr_id){where id: pr_id}
+  scope :filter_category,
+        ->(category_id){where(category_id: category_id) if category_id.present?}
   delegate :category_name, to: :category
   enum status: {disabled: 0, enabled: 1}
   has_one_attached :thumbnail

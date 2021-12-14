@@ -11,4 +11,12 @@ class Order < ApplicationRecord
     cancelled: 4
   }
   scope :recent_orders, ->{order created_at: :desc}
+  validates :phone, presence: true, length:
+    {
+      minimum: Settings.length.lenth_min
+    }
+  validates :address, presence: true, length:
+    {
+      minimum: Settings.length.lenth_min
+    }
 end
