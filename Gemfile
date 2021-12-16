@@ -31,6 +31,7 @@ gem "bootsnap", ">= 1.4.4", require: false
 group :development, :test do
   gem "database_cleaner"
   gem "factory_bot_rails"
+  gem "rails-controller-testing"
   gem "pry", "~> 0.14.0"
   gem "rubocop", "~> 0.74.0", require: false
   gem "rubocop-checkstyle_formatter", require: false
