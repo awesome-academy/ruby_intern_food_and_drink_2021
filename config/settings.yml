@@ -33,3 +33,5 @@ quantity_min: 1
 init_number: 0
 ship: 50000
 phone_regex: !ruby/regexp /\d[0-9]\)*\z/
+len_min: 5
+len_max: 100

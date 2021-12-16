@@ -29,6 +29,8 @@ gem "jbuilder", "~> 2.7"
 gem "bootsnap", ">= 1.4.4", require: false
 
 group :development, :test do
+  gem "database_cleaner"
+  gem "factory_bot_rails"
   gem "pry", "~> 0.14.0"
   gem "rubocop", "~> 0.74.0", require: false
   gem "rubocop-checkstyle_formatter", require: false
@@ -36,6 +38,7 @@ group :development, :test do
   gem "rspec-rails", "~> 4.0.1"
   gem "simplecov-rcov"
   gem "simplecov"
+  gem "shoulda-matchers"
 end
 
 group :development do
