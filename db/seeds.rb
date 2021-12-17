@@ -5,8 +5,7 @@ User.create!(name: "Quan Van Chung",
   role: true,
   activated: true,
   phone: "0987654321",
-  address: "ha noi",
-  activated_at: Time.zone.now)
+  address: "ha noi")
 # Fake accounts
 20.times do |n|
   name = Faker::Name.unique.name
@@ -21,8 +20,7 @@ User.create!(name: "Quan Van Chung",
                    role: false,
                    activated: true,
                    phone: phone,
-                   address: address,
-                   activated_at: Time.zone.now)
+                   address: address)
 end
 User.create!(name: "Quan Chung",
   email:"qvchung0@gmail.com",
@@ -30,8 +28,7 @@ User.create!(name: "Quan Chung",
   password_confirmation: "chung123",
   phone: "0987654322",
   address: "ha noi",
-  activated: true,
-  activated_at: Time.zone.now)
+  activated: true)
 # Fake categorys
 10.times do |n|
   name = Faker::Food.ingredient

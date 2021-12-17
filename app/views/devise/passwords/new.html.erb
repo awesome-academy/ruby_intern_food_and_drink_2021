@@ -1,0 +1,29 @@
+<%= stylesheet_link_tag "sign_up", media: "all", "data-turbolinks-track": true %>
+<div class="breadcrumb-section breadcrumb-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <div class="breadcrumb-text">
+          <article class="card-body mx-auto">
+            <h1 class="card-title mt-3 text-center"><%= t "form.forgot_password"%></h1>
+            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
+              <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><%= t "form.email"%></span>
+                </div>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= f.submit t("form.send_reset_password").upcase, class: "btn btn-primary btn-block" %>
+              </div>
+            <% end %>
+            <div>
+              <p class="text-center"><%= render "devise/shared/links" %></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

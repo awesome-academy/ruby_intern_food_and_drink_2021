@@ -1,0 +1,70 @@
+<%= stylesheet_link_tag "edit_user", media: "all", "data-turbolinks-track": true %>
+<div class="breadcrumb-section breadcrumb-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <div class="breadcrumb-text">
+          <h1><%= t "form.edit_user" %></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card bg-light">
+  <article class="card-body mx-auto mt-10 text-center">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><%= t "form.full_name" %></span>
+        </div>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control", placeholder: t("form.full_name") %>
+      </div>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><%= t "form.email" %></span>
+        </div>
+        <%= f.email_field :email, autocomplete: "email", class: "form-control", placeholder: t("form.email") %>
+      </div>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><%= t "form.phone" %></span>
+        </div>
+        <%= f.text_field :phone, autocomplete: "phone", class: "form-control", placeholder: t("form.phone") %>
+      </div>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><%= t "form.address" %></span>
+        </div>
+        <%= f.text_field :address, autocomplete: "address", class: "form-control", placeholder: t("form.address") %>
+      </div>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><%= t "form.current_password" %></span>
+        </div>
+        <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control", placeholder: t("form.current_password") %>
+      </div>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><%= t "form.new_password" %></span>
+        </div>
+        <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: t("form.new_password")  %>
+      </div>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><%= t "form.new_password_confirmation" %></span>
+        </div>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: t("form.new_password_confirmation") %>
+      </div>
+      <div class="form-group">
+        <%= f.submit t("form.update").upcase, class: "btn" %>
+        <%= link_to root_path do %>
+          <button class="btn-cancel btn-danger ml-3"><h5><%= t "form.cancel_update" %></h5></button>
+        <% end %>
+      </div>
+    <% end %>
+    <p class="text-center"><%= t "form.cancel_account" %>
+      <%= link_to t("form.cancel"),registration_path(resource_name), data: {confirm: t("you_sure")}, method: :delete, class: "text-danger" %>
+    </p>
+  </article>
+</div>

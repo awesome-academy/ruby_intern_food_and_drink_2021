@@ -8,6 +8,7 @@
       <% end %>
     </div>
     <h3><%= food.name %></h3>
+    <h4><%= t ".id" %>: SP<%= food.id %></h4>
     <% if check_quantity?(food.quantity) %>
       <h4><%= t ".sold_out" %></h4>
       <p class="product-price"><span><%= t ".per_kg" %></span> <%= number_to_currency(food.price, locale: :vi) %> </p>

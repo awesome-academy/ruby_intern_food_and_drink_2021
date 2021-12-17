@@ -1,0 +1,34 @@
+<%= stylesheet_link_tag "sign_up", media: "all", "data-turbolinks-track": true %>
+<div id="login-box">
+  <div class="breadcrumb-section breadcrumb-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-center">
+          <div class="breadcrumb-text">
+            <h1 class="title"><%= t "log_in.log_in" %></h1>
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "text", placeholder: t("form.email") %>
+              <%= f.password_field :password, autocomplete: "current-password", class: "password", placeholder: t("form.password") %>
+              <% if devise_mapping.rememberable? %>
+                <div class="checkbox inline">
+                  <p>
+                    <%= f.check_box :remember_me %>
+                    <%= t("log_in.remember_me") %>
+                  </p>
+                </div>
+              <% end %>
+              <%= f.submit t("log_in.log_in").upcase, class: "btn btn-primary" %>
+            <% end %>
+            <p>
+              <%= t "log_in.new_user" %>
+              <%= render "devise/shared/links" %>
+            </p>
+            <button class="social-signin facebook"><%= t "sign_up.log_in_with_facebook" %></button>
+            <button class="social-signin google"><%= t "sign_up.log_in_with_google" %></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

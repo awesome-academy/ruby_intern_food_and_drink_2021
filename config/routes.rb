@@ -19,9 +19,12 @@ Rails.application.routes.draw do
     get "/contact", to: "static_pages#contact"
     get "/checkout", to: "static_pages#checkout"
     get "/single", to: "static_pages#single"
-    get :login, to: "sessions#new"
-    post :login, to: "sessions#create"
-    delete :logout, to: "sessions#destroy"
+    devise_for :users
+    as :user do
+      get "login" => "devise/sessions#new"
+      get "signup", to: "devise/registrations#new"
+      delete "logout" => "devise/sessions#destroy"
+    end
     resources :users do
       resources :orders
     end

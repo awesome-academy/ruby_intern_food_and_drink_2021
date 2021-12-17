@@ -30,9 +30,9 @@
                   <b class="caret"></b>
                 <% end %>
                 <ul class="sub-menu">
-                  <% if logged_in? %>
-                    <li><%= link_to t("profile"), "#" %></li>
-                    <li><%= link_to t("setting"), "#" %></li>
+                  <% if user_signed_in? %>
+                    <li><%= link_to t("profile"), user_path(current_user) %></li>
+                    <li><%= link_to t("setting"), edit_user_registration_path %></li>
                     <% if current_user.role? %>
                       <li>
                         <%= link_to t("dashboard"), admin_root_path %>
@@ -45,7 +45,7 @@
                       <%= link_to t("log_out"), logout_path, method: :delete %>
                     </li>
                   <% else %>
-                    <li><%= link_to t("sign_up.sign_up"), new_user_path %></li>
+                    <li><%= link_to t("sign_up.sign_up"), signup_path %></li>
                     <li><%= link_to t("log_in.log_in"), login_path %></li>
                   <% end %>
                 </ul>
