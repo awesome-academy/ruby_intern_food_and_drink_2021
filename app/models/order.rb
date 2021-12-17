@@ -10,6 +10,10 @@ class Order < ApplicationRecord
     completed: 3,
     cancelled: 4
   }
+  enum role: {
+    orders_admin: 0,
+    orders_user: 1
+  }
   scope :recent_orders, ->{order created_at: :desc}
   validates :phone, presence: true, length:
     {

@@ -1,24 +1,27 @@
-<tr>
-  <td><%= link_to food.name, admin_food_path(food) %></td>
-  <td>
-    <% if food.thumbnail.present? %>
-      <%= link_to image_tag(food.display_thumbnail), admin_food_path(food) %><br>
-    <% else %>
-      <%= link_to (gravatar_for food, size: Settings.gravatar.medium_size), admin_food_path(food) %><br>
-    <% end %>
-  </td>
-  <td><%= food.price %></td>
-  <td><%= food.quantity %></td>
-  <td>
-    <%= link_to edit_admin_food_path(food) do %>
-      <button type="button" class="btn btn-primary btn-sm">
-        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-      </button>
-    <% end %>
-    <%= link_to admin_food_path(food), method: :delete,data: {confirm: t("sure")}  do %>
-      <button type="button" class="btn btn-danger btn-sm">
-        <i class="fa fa-trash-o" aria-hidden="true"></i>
-      </button>
-    <% end %>
-  </td>
-</tr>
+<% foods.each_with_index do |food, i| %>
+  <tr>
+    <td><%= i + 1 %></td>
+    <td><%= link_to food.name, admin_food_path(food) %></td>
+    <td>
+      <% if food.thumbnail.present? %>
+        <%= link_to image_tag(food.display_thumbnail), admin_food_path(food) %><br>
+      <% else %>
+        <%= link_to (gravatar_for food, size: Settings.gravatar.medium_size), admin_food_path(food) %><br>
+      <% end %>
+    </td>
+    <td><%= food.price %></td>
+    <td><%= food.quantity %></td>
+    <td>
+      <%= link_to edit_admin_food_path(food) do %>
+        <button type="button" class="btn btn-primary btn-sm">
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        </button>
+      <% end %>
+      <%= link_to admin_food_path(food), method: :delete,data: {confirm: t("sure")}  do %>
+        <button type="button" class="btn btn-danger btn-sm">
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </button>
+      <% end %>
+    </td>
+  </tr>
+<% end %>

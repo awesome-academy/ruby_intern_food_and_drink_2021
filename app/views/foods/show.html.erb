@@ -27,6 +27,7 @@
         <div class="col-md-7">
           <div class="single-product-content">
             <h3><%= @food.name %></h3>
+            <h3><%= t "id", @food.id %></h3>
             <h4><%= t ".per_kg" %>: <%= number_to_currency(@food.price, locale: :vi) %></h4>
             <p><h4><%= t ".description" %>:</h4><%= @food.description %></p>
             <p><h4><%= t ".category" %>:</h4><%= @food.category_name %></p>

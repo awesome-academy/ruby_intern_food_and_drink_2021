@@ -33,6 +33,18 @@ RSpec.describe User, type: :model do
       end
     end
 
+    context "with field phone" do
+      it { should validate_presence_of(:phone) }
+
+      it { should validate_length_of(:phone).is_at_least(Settings.len_min) }
+    end
+
+    context "with field address" do
+      it { should validate_presence_of(:address) }
+
+      it { should validate_length_of(:address).is_at_least(Settings.len_min) }
+    end
+
     context "with field password" do
       it { should validate_presence_of(:password).allow_nil }
 

@@ -2,6 +2,8 @@
   <%= render "shared/error_messages", object: f.object %>
   <%= f.text_field :name, class: "text", placeholder: t("form.full_name") %>
   <%= f.email_field :email, class: "text", placeholder: t("form.email") %>
+  <%= f.phone_field :phone, class: "text", placeholder: t("form.phone") %>
+  <%= f.text_field :address, class: "text", placeholder: t("form.address") %>
   <%= f.password_field :password, class: "password", placeholder: t("form.password") %>
   <%= f.password_field :password_confirmation, class: "password", placeholder: t("form.password_confirmation") %>
   <%= f.submit t("sign_up.sign_up").upcase, class: "btn btn-primary" %>

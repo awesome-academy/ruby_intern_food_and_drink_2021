@@ -33,9 +33,23 @@ body {
   width: 50%;
 }
 
+@keyframes example2 {
+  from {color: $gray_light; background-color: $red;}
+  to { color: $light; background-color: none;}
+}
+
 .alert-danger {
-  color: $red;
-  margin-bottom: 20px;
+  color: $light;
+  padding-left: 5px;
+  padding-top: 10px;
+  font-size: 20px;
+  height: 35px;
+  width: 18%;
+  position:absolute;
+  z-index: 999;
+  margin-left: 1400px;
+  animation-name: example2;
+  animation-duration: 5s
 }
 
 h1 {

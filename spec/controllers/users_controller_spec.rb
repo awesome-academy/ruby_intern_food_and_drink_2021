@@ -22,6 +22,8 @@ RSpec.describe UsersController, type: :controller do
         post :create, params: { user: {
           name: "nguyen van an",
           email: "test@example.com",
+          phone: "0986827712",
+          address: "ha noi",
           password: "chung123",
           password_confirmation: "chung123"
         }}

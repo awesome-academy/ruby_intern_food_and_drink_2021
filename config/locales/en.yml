@@ -90,6 +90,8 @@ en:
     email: "E-mail"
     password: "Password"
     password_confirmation: "Confirm Password"
+    phone: "Phone"
+    address: "Address"
   message_user_nil: "Account does not exist!"
   shared:
     error_messages:
@@ -242,11 +244,13 @@ en:
   order_detail: "Order detail"
   foods:
     food:
+      id: "Id"
       per_kg: "Per Kg"
       add_to_cart: "Add to cart"
       quantity: "Quantity"
       sold_out: "Sold Out"
     show:
+      id: "Id"
       per_kg: "Per Kg"
       add_to_cart: "Add to cart"
       see_more: "See more Details"
@@ -335,6 +339,8 @@ en:
       subtotal: "Subtotal"
       shipping: "Shipping"
     show:
+      image: "Image"
+      id: "Id"
       product_name: "Product"
       ordinal_number: "Ordinal number"
       quantity: "Quantity"
@@ -370,6 +376,9 @@ en:
       title: "My Cart"
       fresh: "Fresh Organic"
     cart_index:
+      update: "update"
+      action: "Action"
+      id: "Id"
       image: "Image"
       name: "Name"
       price: "Price"
@@ -386,3 +395,4 @@ en:
   order_fail: "Order failed. Please check and try again!"
   order_success: "Your order has been successfully placed!"
   order_information: "Order Information"
+  id: "Id SP%{id}"

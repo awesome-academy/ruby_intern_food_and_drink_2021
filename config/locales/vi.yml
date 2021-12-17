@@ -90,6 +90,8 @@ vi:
     email: "E-mail"
     password: "Mật Khẩu"
     password_confirmation: "Xác Nhận Mật Khẩu"
+    phone: "Điện thoại"
+    address: "Địa chỉ"
   message_user_nil: "Tài khoản không tồn tại!"
   shared:
     error_messages:
@@ -242,11 +244,13 @@ vi:
   order_detail: "Chi tiết đơn hàng"
   foods:
     food:
+      id: "Mã"
       per_kg: "Mỗi Kg"
       add_to_cart: "Thêm vào giỏ hàng"
       quantity: "Số lượng"
       sold_out: "Hết hàng"
     show:
+      id: "Mã"
       per_kg: "Mỗi Kg"
       add_to_cart: "Thêm vào giỏ hàng"
       see_more: "Xem thêm Chi tiết"
@@ -335,6 +339,8 @@ vi:
       subtotal: "Tổng số"
       shipping: "Vận chuyển"
     show:
+      image: "Hình ảnh"
+      id: "Mã"
       product_name: "Sản phẩm"
       ordinal_number: "Số thứ tự"
       quantity: "Số lượng"
@@ -370,6 +376,9 @@ vi:
       title: "Giỏ Hàng Của Tôi"
       fresh: "Hoa quả hữu cơ"
     cart_index:
+      update: "cập nhật"
+      action: "Hành động"
+      id: "Mã"
       image: "Hình ảnh"
       name: "Tên"
       price: "Giá"
@@ -386,3 +395,4 @@ vi:
   order_fail: "Đơn hàng không thành công. Vui lòng kiểm tra và thử lại!"
   order_success: "Đơn hàng của bạn đã được đặt thành công!"
   order_information: "Thông tin đặt hàng"
+  id: "Mã SP%{id}"

@@ -34,9 +34,9 @@
                 <div class="card-body">
                   <%= form_tag orders_path, method: :post do %>
                     <%= label_tag :phone, t(".phone") %>
-                    <%= text_field_tag :phone, nil, class:"text" %>
+                    <%= text_field_tag :phone, nil, class:"text", value: current_user.phone %>
                     <%= label_tag :address, t(".address") %>
-                    <%= text_field_tag :address, nil, class:"text" %>
+                    <%= text_field_tag :address, nil, class:"text", value: current_user.address %>
                     <div class="text">
                       <%= submit_tag t ".place_order", class: "boxed-btn" %>
                     </div>
