@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  ATTR_CHANGE = %i(name email password password_confirmation).freeze
+  ATTR_CHANGE = %i(name email phone address
+                   password password_confirmation).freeze
   attr_accessor :remember_token
   has_many :orders, dependent: :destroy
   has_many :favorites, dependent: :destroy
@@ -7,14 +8,22 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length:
     {
-      minimum: Settings.length.min_5,
-      maximum: Settings.length.max_100
+      minimum: Settings.len_min,
+      maximum: Settings.len_max
     }
   validates :email, presence: true, uniqueness: true,
-    length: {maximum: Settings.length.max_100},
+    length: {maximum: Settings.len_max},
     format: {with: Settings.email_regex}
   validates :password, presence: true,
-    length: {minimum: Settings.length.min_5}, allow_nil: true
+    length: {minimum: Settings.len_min}, allow_nil: true
+  validates :phone, presence: true, length:
+    {
+      minimum: Settings.len_min
+    }
+  validates :address, presence: true, length:
+    {
+      minimum: Settings.len_min
+    }
   has_secure_password
 
   class << self

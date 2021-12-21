@@ -1,4 +1,5 @@
 <tr>
+  <td><%= t "id", id: cart.food_id %></td>
   <td>
     <% if check_thumb? cart.food_thumbnail %>
       <%= image_tag cart.food_thumbnail, class: "image-order" %>

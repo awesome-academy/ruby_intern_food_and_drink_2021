@@ -42,6 +42,7 @@ class OrdersController < ApplicationController
     @order = Order.find_by(id: params[:id])
     if @order.open?
       @order.cancelled!
+      @order.orders_user!
       update_quantity_food :+
       send_mail
     else

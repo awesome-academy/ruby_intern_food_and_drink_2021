@@ -4,24 +4,32 @@ User.create!(name: "Quan Van Chung",
   password_confirmation: "chung123",
   role: true,
   activated: true,
+  phone: "0987654321",
+  address: "ha noi",
   activated_at: Time.zone.now)
 # Fake accounts
 20.times do |n|
   name = Faker::Name.unique.name
   email = "example-#{n+1}@test.com"
   password = "chung123"
+  phone = Faker::PhoneNumber.cell_phone
+  address = Faker::Address.full_address
   u = User.create!(name: name,
                    email: email,
                    password: password,
                    password_confirmation: password,
                    role: false,
                    activated: true,
+                   phone: phone,
+                   address: address,
                    activated_at: Time.zone.now)
 end
 User.create!(name: "Quan Chung",
   email:"qvchung0@gmail.com",
   password: "chung123",
   password_confirmation: "chung123",
+  phone: "0987654322",
+  address: "ha noi",
   activated: true,
   activated_at: Time.zone.now)
 # Fake categorys

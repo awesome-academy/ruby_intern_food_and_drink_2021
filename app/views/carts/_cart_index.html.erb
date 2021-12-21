@@ -5,12 +5,13 @@
         <table class="cart-table">
           <thead class="cart-table-head">
             <tr class="table-head-row">
-              <th class="product-remove"></th>
-              <th class="product-image"><% t ".image" %></th>
-              <th class="product-name"><% t ".name" %></th>
-              <th class="product-price"><% t ".price" %></th>
-              <th class="product-quantity"><% t ".quantity" %></th>
-              <th class="product-total"><% t ".total" %></th>
+              <th class="product-remove"><%= t ".action" %></th>
+              <th class="product-name"><%= t ".id" %></th>
+              <th class="product-image"><%= t ".image" %></th>
+              <th class="product-name"><%= t ".name" %></th>
+              <th class="product-price"><%= t ".price" %></th>
+              <th class="product-quantity"><%= t ".quantity" %></th>
+              <th class="product-total"><%= t ".total" %></th>
             </tr>
           </thead>
           <tbody class="abc">
@@ -21,10 +22,18 @@
                     <i class="far fa-window-close"></i>
                   <% end %>
                 </td>
+                <td class="product-name"><%= t "id", id: item.id %></td>
                 <td class="product-image"> <%= check_thumbnail? item %></td>
                 <td class="product-name"><%= item.name %></td>
                 <td class="product-price"><%= number_to_currency(item.price, locale: :vi) %></td>
-                <td class="product-quantity"><%= session[:cart][item.id.to_s] %></td>
+                <td class="product-quantity">
+                  <%= form_tag cart_path(item.id), method: :put, remote: true do %>
+                    <%= hidden_field_tag :food_id, item.id %>
+                    <%= number_field_tag :quantity, session[:cart][item.id.to_s],
+                                                    min: Settings.quantity_min , max: item.quantity %>
+                    <button type="submit"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                  <% end %>
+                </td>
                 <td class="product-total"><%= number_to_currency(item.price*session[:cart][item.id.to_s], locale: :vi) %></td>
               </tr>
             <% end %>

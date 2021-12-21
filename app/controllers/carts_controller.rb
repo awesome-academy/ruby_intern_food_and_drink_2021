@@ -20,6 +20,13 @@ class CartsController < ApplicationController
     load_cart
   end
 
+  def update
+    @food_id = params[:food_id].to_i
+    @quantity = params[:quantity].to_i
+    session[:cart][@food_id.to_s] = @quantity
+    load_cart
+  end
+
   def destroy
     food_id = params[:id].to_i
     session[:cart].delete(food_id.to_s)

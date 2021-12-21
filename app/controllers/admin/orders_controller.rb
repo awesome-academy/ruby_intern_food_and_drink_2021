@@ -4,7 +4,8 @@ class Admin::OrdersController < Admin::AdminsController
   def index
     if params[:status].nil?
       @title = t "all"
-      @orders = Order.includes(:carts, :user).recent_orders.page(params[:page])
+      @orders = Order.includes(:carts, :user).orders_admin
+                     .recent_orders.page(params[:page])
                      .per(Settings.per_page)
     else
       load_orders params[:status]

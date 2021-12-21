@@ -35,9 +35,11 @@
     </div>
       <%= f.label :images, t(".images"), class: "required" %>
     </div>
-    <%= f.file_field :images, multiple: true %>
-    <%= f.file_field :images, multiple: true %>
-    <%= f.file_field :images, multiple: true %>
+    <div class="t-image">
+      <%= f.file_field :images, multiple: true %>
+      <%= f.file_field :images, multiple: true %>
+      <%= f.file_field :images, multiple: true %>
+    </div>
     <div class="submit-form-index">
       <%= f.submit t(".button"),
           class: "btn btn-primary" %>
