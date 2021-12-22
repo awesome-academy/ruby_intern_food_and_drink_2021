@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
-  before_action :logged_in_user
-  before_action :load_order, :load_carts, only: %i(show cancel)
+  before_action :authenticate_user!
+  before_action :load_order, :load_carts, only: %i(show update)
   def index
     @orders = current_user.all_orders
                           .page(params[:page])
@@ -39,7 +39,6 @@ class OrdersController < ApplicationController
   def show; end
 
   def update
-    @order = Order.find_by(id: params[:id])
     if @order.open?
       @order.cancelled!
       @order.orders_user!

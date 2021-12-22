@@ -22,8 +22,6 @@ RSpec.describe User, type: :model do
 
       it { should validate_uniqueness_of(:email).case_insensitive }
 
-      it { should validate_length_of(:email).is_at_most(Settings.len_max) }
-
       it "when too short is invalid" do
         should_not allow_value("an").for(:email)
       end
@@ -63,10 +61,6 @@ RSpec.describe User, type: :model do
       it "return orders of user has sort DESC" do
         expect(user.all_orders).to eq([order_2, order_1])
       end
-    end
-
-    it "forget user" do
-      expect user.forget.should eq true
     end
   end
 end
