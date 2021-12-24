@@ -1,6 +1,7 @@
 class FoodsController < ApplicationController
   before_action :load_food, only: :show
   before_action :categories_select_id_name, only: %i(index)
+  authorize_resource
 
   def index
     @foods = Food.search_by_name(params[:name])

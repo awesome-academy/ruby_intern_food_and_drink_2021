@@ -36,3 +36,4 @@ phone_regex: !ruby/regexp /\d[0-9]\)*\z/
 len_min: 6
 len_max: 100
 id_fail: -1
+len_max_des: 2000
