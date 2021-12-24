@@ -136,6 +136,13 @@ en:
       truncate: "…"
   show_product_fail: "Product Not Found"
   admin:
+    users:
+      index:
+        title: "List Users"
+        name: "Name"
+        phone: "Phone"
+        address: "Address"
+        action: "Action"
     foods:
       index:
         title: "All Products"
@@ -420,3 +427,5 @@ en:
   order_information: "Order Information"
   id: "Id SP%{id}"
   change_pass: "Change Password"
+  no_user: "Not found User"
+  account_blocked: "Account Blocked"

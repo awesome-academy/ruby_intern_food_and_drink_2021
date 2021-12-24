@@ -136,6 +136,13 @@ vi:
       truncate: "…"
   show_product_fail: "Không Tìm Thấy Sản Phẩm"
   admin:
+    users:
+      index:
+        title: "Dang Sách Người Dùng"
+        name: "Tên"
+        phone: "Điện thoại"
+        address: "Địa chỉ"
+        action: "Hoạt Động"
     foods:
       index:
         title: "Tất cả sản phẩm"
@@ -420,3 +427,4 @@ vi:
   order_information: "Thông tin đặt hàng"
   id: "Mã SP%{id}"
   change_pass: "Thay đổi mật khẩu"
+  account_blocked: "Tài khoản đã bị khóa"
