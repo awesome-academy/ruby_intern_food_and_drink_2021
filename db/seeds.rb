@@ -30,8 +30,8 @@ User.create!(name: "Quan Chung",
   address: "ha noi",
   activated: true)
 # Fake categorys
-10.times do |n|
-  name = Faker::Food.ingredient
+6.times do |n|
+  name = Faker::Food.fruits
   Category.create!(category_name: name)
 end
 # Fake foods
@@ -54,10 +54,12 @@ User.all.sample(10).each do |user|
   food = Food.all.sample(1)
   order = user.orders.create!(
     phone: phone,
-    address: address)
+    address: address,
+    total: 200000)
   order.carts.create!(
     quantity: 2,
-    food_id: food[0].id)
+    food_id: food[0].id,
+    total: food[0].price * 2)
 end
 User.all.sample(2).each do |user|
   phone = Faker::PhoneNumber.cell_phone
@@ -66,16 +68,19 @@ User.all.sample(2).each do |user|
   order = user.orders.create!(
     phone: phone,
     address: address,
+    total: 200000,
     status: "shipping")
   order.carts.create!(
     quantity: 2,
-    food_id: food[0].id)
+    food_id: food[0].id,
+    total: food[0].price * 2)
 end
 user = User.last
 food = Food.all.sample(1)
 order = user.orders.create!(
   phone: Faker::PhoneNumber.cell_phone,
-  address: Faker::Address.full_address)
+  address: Faker::Address.full_address,
+  total: 200000)
 order.carts.create!(
   quantity: 2,
   food_id: food[0].id)

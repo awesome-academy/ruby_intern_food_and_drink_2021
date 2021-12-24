@@ -2,11 +2,12 @@ class Admin::OrdersController < Admin::AdminsController
   before_action :load_order, :load_carts,
                 except: %i(index index_by_status)
   def index
+    @q = Order.ransack params[:q]
     if params[:status].nil?
       @title = t "all"
-      @orders = Order.includes(:carts, :user).orders_admin
-                     .recent_orders.page(params[:page])
-                     .per(Settings.per_page)
+      @orders = @q.result.includes(:carts, :user).orders_admin
+                  .recent_orders.page(params[:page])
+                  .per(Settings.per_page)
     else
       load_orders params[:status]
     end
@@ -43,6 +44,7 @@ class Admin::OrdersController < Admin::AdminsController
         update_quantity_food :+
         @order.cancelled!
         send_mail
+        flash[:success] = t "reject_success"
       else
         flash[:danger] = t "reject_failed"
       end
@@ -66,10 +68,11 @@ class Admin::OrdersController < Admin::AdminsController
   def load_orders status
     if Order.statuses.include?(status)
       @title = t "status_order.#{status}"
-      @orders = Order.send(status)
-                     .includes(:carts, :user)
-                     .recent_orders.page(params[:page])
-                     .per(Settings.per_page)
+      @orders = @q.result.send(status)
+                  .orders_admin
+                  .includes(:carts, :user)
+                  .recent_orders.page(params[:page])
+                  .per(Settings.per_page)
     else
       flash[:success] = t "error_path"
       redirect_to admin_orders_path

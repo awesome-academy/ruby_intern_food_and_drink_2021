@@ -48,10 +48,6 @@ RSpec.describe Food, type: :model do
         expect(Food.filter_category(category_1.id)).to eq [food_1]
       end
 
-      it "when not found food by category_id" do
-        expect(Food.filter_category(category_2.id)).to eq []
-      end
-
       it "when not found category" do
         expect(Food.filter_category(Settings.id_fail)).to eq []
       end

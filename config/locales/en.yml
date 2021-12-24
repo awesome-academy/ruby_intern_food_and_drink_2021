@@ -148,6 +148,10 @@ en:
         quantity: "Quantity"
         action: "Action"
         button: "Add Product"
+        search: "Search"
+        category: "---- Category ----"
+        name_or_des: "Name or Description"
+        created_food: "Created"
       new:
         title: "Create Product"
       show:
@@ -214,6 +218,7 @@ en:
         no_order: "No order"
         all: "All"
         created_order: "Order day"
+        search: "Search"
       show:
         product_name: "Product"
         ordinal_number: "Ordinal number"

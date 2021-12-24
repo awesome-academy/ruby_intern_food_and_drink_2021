@@ -2,7 +2,9 @@ class Admin::FoodsController < Admin::AdminsController
   before_action :load_food, except: %i(index new create)
 
   def index
-    @foods = Food.recent_foods.page(params[:page]).per(Settings.per_page)
+    @categories = Category.all
+    @q = Food.ransack params[:q]
+    @foods = @q.result.recent_foods.page(params[:page]).per(Settings.per_page)
   end
 
   def new

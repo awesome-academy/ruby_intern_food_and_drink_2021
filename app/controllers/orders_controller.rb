@@ -91,7 +91,8 @@ class OrdersController < ApplicationController
   def save_order
     current_user.orders.build(
       phone: params[:phone],
-      address: params[:address]
+      address: params[:address],
+      total: @total
     )
   end
 
@@ -103,7 +104,8 @@ class OrdersController < ApplicationController
       food = Food.find_by(id: food_id)
       @cart = order.carts.build(
         quantity: quantity,
-        food_id: food_id
+        food_id: food_id,
+        total: food.price * quantity
       )
       @cart.save!
       remaining_quantity = food.quantity - quantity

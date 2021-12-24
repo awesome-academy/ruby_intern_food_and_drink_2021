@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
   belongs_to :user
   has_many :carts, dependent: :destroy
-  has_many :foods, through: :order_details
+  has_many :foods, through: :carts
   delegate :name, :email, to: :user, prefix: true
   enum status: {
     open: 0,
@@ -15,12 +15,21 @@ class Order < ApplicationRecord
     orders_user: 1
   }
   scope :recent_orders, ->{order created_at: :desc}
+  ransacker :created_at do
+    Arel.sql("date(created_at)")
+  end
   validates :phone, presence: true, length:
     {
-      minimum: Settings.length.lenth_min
+      minimum: Settings.len_min
     }
   validates :address, presence: true, length:
     {
-      minimum: Settings.length.lenth_min
+      minimum: Settings.len_min
     }
+  validates :total, presence: true,
+  numericality:
+  {
+    only_integer: false,
+    greater_than_or_equal_to: Settings.init_number
+  }
 end
