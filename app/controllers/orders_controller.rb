@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :load_order, :load_carts, only: %i(show update)
+  authorize_resource
+
   def index
     @orders = current_user.all_orders
                           .page(params[:page])

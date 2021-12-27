@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :permitted_parameters, if: :devise_controller?
 
+  rescue_from CanCan::AccessDenied, with: :access_denied
+
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end
@@ -25,6 +27,11 @@ class ApplicationController < ActionController::Base
 
   def categories_select_id_name
     @categories = Category.select(:id, :category_name)
+  end
+
+  def access_denied
+    flash[:danger] = t "not_permission"
+    redirect_to root_url
   end
 
   protected

@@ -3,7 +3,7 @@ class Food < ApplicationRecord
                    category_id).freeze
   belongs_to :category
   has_many :carts, dependent: :destroy
-  has_many :orders, through: :order_details
+  has_many :orders, through: :carts
   scope :recent_foods, ->{order created_at: :desc}
   scope :search_by_name,
         ->(name){where "name LIKE ?", "%#{name}%" if name.present?}
@@ -21,7 +21,7 @@ class Food < ApplicationRecord
 
   validates :name, presence: true,
     length: {
-      maximum: Settings.length.lenth_max
+      maximum: Settings.len_max
     }
 
   validates :price, presence: true,
@@ -33,8 +33,8 @@ class Food < ApplicationRecord
 
   validates :description, presence: true,
     length: {
-      minimum: Settings.length.lenth_min,
-      maximum: Settings.length.lenth_max
+      minimum: Settings.len_min,
+      maximum: Settings.len_max_des
     }
 
   validates :quantity, presence: true,

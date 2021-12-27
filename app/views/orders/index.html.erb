@@ -16,21 +16,23 @@
     <div class="col-md-12 col-lg-12">
       <div id="tracking">
         <div class="tracking-list">
-          <% if @orders.any? %>
-            <%= render @orders %>
-            <div class="row">
-              <div class="col-lg-12 text-center">
-                <div class="pagination-wrap">
-                  <ul>
-                    <%= paginate @orders, theme: "twitter-bootstrap-3" %>
-                  </ul>
+          <% if can? :read, Order %>
+            <% if @orders.any? %>
+              <%= render @orders %>
+              <div class="row">
+                <div class="col-lg-12 text-center">
+                  <div class="pagination-wrap">
+                    <ul>
+                      <%= paginate @orders, theme: "twitter-bootstrap-3" %>
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
-          <% else %>
-            <h1 class="text-center cart-index-title">
-              <%= t ".no_order" %>
-            </h1>
+            <% else %>
+              <h1 class="text-center cart-index-title">
+                <%= t ".no_order" %>
+              </h1>
+            <% end %>
           <% end %>
         </div>
       </div>
