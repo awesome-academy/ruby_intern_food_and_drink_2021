@@ -1,6 +1,7 @@
 <% foods.each_with_index do |food, i| %>
   <tr>
     <td><%= i + 1 %></td>
+    <td><%= l food.created_at, format: :own %></td>
     <td><%= link_to food.name, admin_food_path(food) %></td>
     <td>
       <% if food.thumbnail.present? %>

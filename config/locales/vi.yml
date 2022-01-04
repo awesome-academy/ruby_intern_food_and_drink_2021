@@ -148,6 +148,10 @@ vi:
         quantity: "Số lượng"
         action: "Hoạt Động"
         button: "Thêm sản phẩm"
+        search: "Tìm kiếm"
+        category: "---- Phân Loại ----"
+        name_or_des: "Tên hoặc Mô tả"
+        created_food: "Ngày tạo"
       new:
         title: "Tạo Sản Phẩm"
       show:
@@ -214,6 +218,7 @@ vi:
         no_order: "Không có đơn hàng"
         all: "Tất cả"
         created_order: "Ngày đặt"
+        search: "Tìm kiếm"
       show:
         product_name: "Sản phẩm"
         ordinal_number: "Số thứ tự"

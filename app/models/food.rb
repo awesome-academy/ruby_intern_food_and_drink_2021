@@ -16,7 +16,9 @@ class Food < ApplicationRecord
   has_many_attached :images
   accepts_nested_attributes_for :category, allow_destroy: true,
                                            reject_if: :validate_nested
-
+  ransacker :created_at do
+    Arel.sql("date(created_at)")
+  end
   validates :category, presence: true
 
   validates :name, presence: true,

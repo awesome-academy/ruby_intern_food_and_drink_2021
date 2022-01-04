@@ -5,7 +5,30 @@
       <h3>
         <small><%= t ".subject" %></small>
       </h3>
-    </div></br>
+      <%= search_form_for [:admin,@q] do |f| %>
+        <div class="text">
+          <%= f.label t(".name_or_des")<<":" %>
+          <%= f.search_field :name_or_description_cont %>
+        </div>
+        <div class="text">
+          <%= f.collection_select  :category_id_eq, @categories, :id, :category_name, {:prompt => t(".category") }, class: "form-control" %>
+        </div>
+        <div class="text">
+          <%= f.label t(".price")<<" <=: " %>
+          <%= f.search_field :price_lteq %>
+        </div>
+        <div class="text">
+          <%= f.label t(".price")<<" <=: " %>
+          <%= f.search_field :price_gteq %>
+        </div>
+        <div class="col-5 lable-form">
+          <%= f.label  t ".created_food" %>
+          <%= f.date_field :created_at_eq, value: "%Y/%D/%M", class: "form-control" %><br>
+        </div>
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <%= f.submit t ".search" %>
+      <% end %>
+    </div>
     <div class="title_right">
       <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
         <%= link_to t(".button"), new_admin_food_path, class: "btn btn-primary btn-lg" %>
@@ -13,7 +36,7 @@
     </div>
   </div>
   <div class="clearfix"></div>
-  <div class="row">
+  <div class="row mt-2">
     <div class="col-md-12 col-sm-12 ">
       <div class="x_panel">
         <div class="x_title">
@@ -31,10 +54,11 @@
                     <thead>
                       <tr>
                         <th>#</th>
+                        <th><%= t ".created_food" %></th>
                         <th><%= t ".name" %></th>
                         <th><%= t ".image" %></th>
-                        <th><%= t ".price" %></th>
-                        <th><%= t ".quantity" %></th>
+                        <th><%= sort_link(@q, :price, t(".price"),default_order: :desc) %></th>
+                        <th><%= sort_link(@q, :quantity, t(".quantity"),default_order: :desc) %></th>
                         <th><%= t ".action" %></th>
                       </tr>
                     </thead>
