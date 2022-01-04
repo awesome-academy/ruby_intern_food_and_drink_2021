@@ -4,6 +4,7 @@ FactoryBot.define do
     email{Faker::Internet.email.downcase}
     phone{Faker::PhoneNumber.cell_phone}
     address{Faker::Address.full_address}
+    activated{true}
     password{"chung123"}
     password_confirmation{"chung123"}
   end
